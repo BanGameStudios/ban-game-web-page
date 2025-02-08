@@ -1,0 +1,49 @@
+---
+const currentPath = Astro.url.pathname;
+const sections = [
+    {
+        label: 'Inicio',
+        href: '/',
+    },
+    {
+        label: 'Proyectos',
+        href: '/proyectos',
+        desc: "Proyectos (eventos y series) que hemos realizado."
+    },
+    {
+        label: 'Staff',
+        href: '/staff',
+        desc: 'Equipo de Ban Game Studios.'
+    },
+    {
+        label: 'Contacto',
+        href: 'https://forms.gle/Vk2Grabxz814EiZ58',
+    }
+];
+---
+
+{
+    sections.map(section => (
+        <a href={section.href} title={section.desc} class={currentPath === section.href ? "active" : ""}>
+            {section.label}
+        </a>
+    ))
+}
+
+<style>
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: color 0.3s ease;
+    }
+
+    a.active {
+        color: #7b7b7b;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #ccc;
+    }
+</style>

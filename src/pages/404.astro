@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const isNotFound = true;
+---
+
+<Layout title="404" desc="Pagina no encontrada.">
+    <div class="flex flex-col items-center justify-center text-center pt-[180px] pb-[180px]">
+        <h1 class="text-[44px] font-bold p-0 m-0 mb-[5px] pl-5 pr-5">404</h1>
+        <p class="text-[32px] font-bold p-0 m-0 mb-[15px] pl-5 pr-5">Pagina no encontrada</p>
+        <p class="text-[16px] text-[darkgrey] p-0 m-0 pl-5 pr-5">Parece que te has perdido. Volver a <a class="no-underline text-white transition-colors duration-300 ease-in hover:text-[darkgrey]" href="/">inicio</a>.</p>
+    </div>
+</Layout>
+

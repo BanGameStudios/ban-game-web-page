@@ -1,0 +1,39 @@
+---
+import FooterTitle from "./FooterTitle.astro"
+import Links from "./Links.astro"
+import Networks from "./Networks.astro"
+---
+
+<footer class="relative bg-[#1c1c1c] mt-auto px-[50px] pt-[20px] pb-[20px]">
+    <div class="flex items-start flex-wrap max-[960px]:flex-col max-[960px]:items-center max-[960px]:text-center ">
+        <div class="flex-[3]">
+            <FooterTitle label="BAN GAME STUDIOS"/>
+            <p class="text-[#7b7b7b] text-[15px]">© 2025 BanGameStudios</p>
+        </div>
+
+        <div class="flex-[3]">
+            <FooterTitle label="Enlaces"/>
+            <Links title="Inicio" href="/"/>
+            <Links title="Proyectos" href="/proyectos"/>
+            <Links title="Staff" href="/staff"/>
+            <Links title="Contacto" href="https://forms.gle/Vk2Grabxz814EiZ58"/>
+            <Links title="Launcher" href="/launcher"/>
+        </div>
+
+        <div class="flex-[3]">
+            <FooterTitle label="Legal"/>
+            <Links title="Terminos y Condiciones" href="/terminos"/>
+        </div>
+
+        <div class="flex-[3]">
+            <FooterTitle label="Acerca de"/>
+            <p class="text-[#7b7b7b] text-[15px] mb-[10px]">Somos un estudio de desarrollo de servidores de Minecraft Java semi-profesionales, fundado por Katto, FranNazurRM y Sir el 10 de agosto de 2023.</p>
+            <p class="text-[#7b7b7b] text-[15px] mb-[10px]">Trabajamos mayormente en el lado de los mods con la ayuda de plugins, siempre intentando innovar con estos recursos sin perder calidad.</p>
+            <p class="text-[#7b7b7b] text-[15px] mb-[10px]"> Actualmente, estamos colaborando con 
+                <a class="no-underline text-white transition-colors duration-300 ease-in hover:text-[#ccc]" href="https://minemu.es/">Minemu</a> 
+            para servicios de Host (Servidor).</p>
+        </div>
+    </div>
+
+    <Networks/>
+</footer>
