@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Title from "../components/Title.astro"
+import { Image } from "astro:assets"
+import launcher from '../assets/launcher.webp'
+import DownloadButton from "../components/DownloadButton.astro"
+---
+
+<Layout title="Launcher">
+    <!--<div class="flex justify-center flex-col items-center">
+        <div class="mt-[35px]">
+            <Title label="Descargar Ban Game Launcher"/>
+        </div>
+        <DownloadButton/>
+        <div class="flex justify-center mt-[40px] mb-[40px]">
+            <Image src={launcher} alt="Launcher" loading="eager" quality="high" class="w-[90%] h-[90%] max-w-[1000px] rounded-[10px] object-cover drop-shadow-[0_0_20px_rgba(42,42,42,0.250)] border-[1.5px] border-[#ffffff3e]" onload="this.parentElement.classList.add('animate-fade-up')"/>
+        </div>
+    </div>-->
+
+    <div class="flex flex-col items-center justify-center center pt-[220px] pb-[220px]">
+        <Title label="Descargar Ban Game Launcher"/>
+        <p class="mt-[10px] text-[1rem] text-[darkgrey] max-w-[600px]">Proximamente...</p>
+    </div>
+</Layout>
+
+<style>
+    .animate-fade-up {
+        opacity: 1;
+    }
+
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-up {
+        animation: fadeUp 1s ease-out forwards;
+    }
+</style>

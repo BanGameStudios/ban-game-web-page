@@ -1,0 +1,76 @@
+---
+import { ClientRouter } from 'astro:transitions'
+
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+const {title} = Astro.props
+
+import "../styles/global.css";
+import Loading from '../components/Loading.astro';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/icon.webp"/>
+		<meta property="og:description" content="Test"/>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ClientRouter/>
+	</head>
+	<body>
+		<Loading transition:persist/>
+		<div class="header">
+			<Header />
+		</div>
+		<slot />
+		<Footer />
+	</body>
+</html>
+
+<style>
+	link[rel="icon"] {
+		filter: invert(1);
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: 'LexendDeca', sans-serif;
+		color: white;
+		background-color: black;
+		display: flex;
+        flex-direction: column;
+		min-height: 100vh;
+	}
+
+	.header {
+		padding-bottom: 55px;
+	}
+
+	@font-face {
+		font-family: 'LexendDeca';
+		src: url('/fonts/LexendDeca-VariableFont_wght.ttf') format('truetype');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+</style>
+
+<style is:global>
+	::-webkit-scrollbar {
+		width: 12px;
+		background-color: #121212;
+		height: 12px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #444;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: #555;
+	}
+</style>

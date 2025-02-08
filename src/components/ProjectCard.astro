@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+
+const proyectos = (await getCollection('proyectos')).sort((a, b) => {
+  const orderA = a.data.order ?? 0;
+  const orderB = b.data.order ?? 0;
+  return orderA - orderB;
+});
+---
+
+<div class="flex flex-col">
+  <div class="flex flex-wrap gap-[2rem] justify-center max-w-[1200px] ml-5 mr-5">
+    {proyectos.map((proyecto) => {
+			const  { slug, data } = proyecto
+			const  { title, type, date } = data
+
+			return (
+        <div class="flex text-center items-center flex-col bg-[#111] text-white rounded-[10px] p-[1.2rem] pt-0 w-[240px] drop-shadow-[0_0_15px_rgba(42,42,42,0.35)] border-[1.5px] border-[rgba(42,42,42,0.500)] overflow-hidden relative group">
+          <img class="absolute w-[240px] h-[240px] object-cover opacity-[0.15] transition-opacity duration-1000 z-[-10] blur-[2rem] group-hover:opacity-[0.45]" src={`/projects/${slug}.webp`}/>
+          <a href={`/proyectos/${slug}`}>
+            <img class="w-[200px] h-[200px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out mt-[1.2rem] hover:scale-[1.05]" src={`/projects/${slug}.webp`} transition:name={slug} />
+          </a>
+          <div class="mt-[8px] p-[8px] text-[1.4rem] font-bold">{title}</div>
+          <div class="text-[1rem] text-[#7b7b7b]">{type} - {date}</div>
+        </div>
+			)
+		})}
+  </div>
+</div>
