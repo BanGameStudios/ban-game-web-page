@@ -55,19 +55,19 @@ export const activos = [
 export const soporte = [
     {
         name: "Hister",
-        link: "https://x.com/pequewasa",
+        link: "https://x.com/histerjax",
         skills: "Programador",
         avatar: "hister"
     },
     {
         name: "SrMaster",
-        link: "https://x.com/pequewasa",
+        link: "https://x.com/_SrMaster_",
         skills: "Programador",
         avatar: "srm"
     },
     {
         name: "Fitz",
-        link: "https://x.com/pequewasa",
+        link: "https://x.com/fitzxel",
         skills: "Programador",
         avatar: "fitz"
     },
