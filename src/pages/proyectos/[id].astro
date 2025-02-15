@@ -3,11 +3,12 @@ import Layout from '../../layouts/Layout.astro';
 import Title from '../../components/Title.astro';
 import { getCollection, render } from 'astro:content';
 import YTVideo from '../../components/YTVideo.astro';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
     const proyectos = await getCollection('proyectos');
 
-    return proyectos.map((proyecto) => ({
+    return proyectos.map((proyecto: { slug: any }) => ({
         params: {id: proyecto.slug },
         props: { proyecto }
     }))
@@ -18,13 +19,15 @@ const { slug, data } = proyecto
 const { title, type, date, desc, gallery } = data
 
 const { Content } = await render(proyecto)
+
+const { default: image } = await import(`../../assets/projects/${slug}.webp`)
 ---
 
 <Layout title={title} desc={desc} image={`/projects/${slug}.webp`}>
     <div class="flex justify-center flex-col items-center mb-[25px]">
         <div class="flex flex-col items-center">
-            <img class="absolute mt-[20px] w-[260px] h-[260px] object-cover opacity-[0.25] justify-center z-[-10] blur-[1rem]" src={`/projects/${slug}.webp`}/>
-            <img class="w-[250px] h-[250px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out flex justify-center mt-[25px] group" src={`/projects/${slug}.webp`} transition:name={slug}/>
+            <Image src={image} alt={title} quality="high" class="absolute mt-[20px] w-[260px] h-[260px] object-cover opacity-[0.25] justify-center z-[-10] blur-[1rem]"/>
+            <Image src={image} alt={title} quality="high" class="w-[250px] h-[250px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out flex justify-center mt-[25px] group" transition:name={slug}/>
         </div>
         <div class="mt-[20px]">
             <Title label={title}/>
@@ -46,15 +49,3 @@ const { Content } = await render(proyecto)
         )}
     </div>
 </Layout>
-
-<style>
-    iframe {
-        border-radius: 10px;
-        object-fit: cover;
-        margin-top: 25px;
-        width: 462px;
-        height: 259px;
-        filter: drop-shadow(0 0 20px rgba(42, 42, 42, 0.250));
-        border: 1px solid #ffffff3e;
-    }
-</style>
