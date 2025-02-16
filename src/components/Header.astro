@@ -140,17 +140,21 @@ import NavButtons from "./NavButtons.astro";
 </style>
 
 <script>
-    document.getElementById("hamburger").addEventListener("click", toggleMenu);
-    window.addEventListener("resize", handleResize);
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
 
-    document.addEventListener('astro:after-swap', () => {
-        document.getElementById("hamburger").addEventListener("click", toggleMenu);
+    if (hamburger != null) {
+        hamburger.addEventListener("click", toggleMenu);
         window.addEventListener("resize", handleResize);
-    });
+
+        document.addEventListener('astro:after-swap', () => {
+            hamburger.addEventListener("click", toggleMenu);
+            window.addEventListener("resize", handleResize);
+        });
+    }
 
     function toggleMenu() {
-        const menu = document.getElementById("menu");
-        const hamburger = document.getElementById("hamburger");
+        if (menu == null || hamburger == null) return;
 
         menu.classList.toggle("open");
         hamburger.classList.toggle("open");
@@ -158,8 +162,10 @@ import NavButtons from "./NavButtons.astro";
 
     function handleResize() {
         if (window.innerWidth >= 960) {
-            document.getElementById("menu").classList.remove("open");
-            document.getElementById("hamburger").classList.remove("open");
+            if (menu == null || hamburger == null) return;
+
+            menu.classList.remove("open");
+            hamburger.classList.remove("open");
         }
     }
 </script>
