@@ -8,7 +8,7 @@ import { Image } from 'astro:assets';
 export async function getStaticPaths() {
     const proyectos = await getCollection('proyectos');
 
-    return proyectos.map((proyecto: { slug: any }) => ({
+    return proyectos.map((proyecto) => ({
         params: {id: proyecto.slug },
         props: { proyecto }
     }))
@@ -30,7 +30,7 @@ const { default: image } = await import(`../../assets/projects/${slug}.webp`)
             <Image src={image} alt={title} quality="high" class="w-[250px] h-[250px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out flex justify-center mt-[25px] group" transition:name={slug}/>
         </div>
         <div class="mt-[20px]">
-            <Title label={title}/>
+            <Title>{title}</Title>
         </div>
         <div class="p-0 m-0 mt-[10px] text-[1rem] text-[#7b7b7b]">
             {type} - {date}
@@ -41,7 +41,7 @@ const { default: image } = await import(`../../assets/projects/${slug}.webp`)
 
         {gallery && (
             <div class="mt-[20px]">
-                <Title label="Videos Destacados"/>
+                <Title>Videos Destacados</Title>
             </div>
 
             <YTVideo url="https://www.youtube.com/watch?v=BcpE8pbG9Nk" title="TRAILER OFICIAL DE #RandomSMP 🚬 | BanGameStudios"/>

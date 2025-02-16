@@ -1,14 +1,13 @@
 ---
 import { Image } from "astro:assets"
 
-const {src} = Astro.props
+const { src } = Astro.props
 
-let staffPicture: string | ImageMetadata
-staffPicture = await import(`../assets/banners/${src}.webp`).then(data => data.default)
+const { default: image } = await import(`../assets/banners/${src}.webp`)
 ---
 
 <div class="opacity-0 transition-opacity duration-1000 ease-in-out">
-    <Image src={staffPicture} alt="Banner" loading="eager" quality="high" class="w-full" onload="this.parentElement.classList.add('animate-fade-up')"/>
+    <Image src={image} alt="Banner" loading="eager" class="w-full" onload="this.parentElement.classList.add('animate-fade-up')"/>
 </div>
 
 <style>

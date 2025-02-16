@@ -4,23 +4,27 @@ import Title from "../components/Title.astro"
 import { Image } from "astro:assets"
 import launcher from '../assets/launcher.webp'
 import DownloadButton from "../components/DownloadButton.astro"
+
+const soon = true;
 ---
 
 <Layout title="Launcher" desc="Launcher oficial de Ban Game Studios para unirte a nuestros eventos y series.">
-    <!--<div class="flex justify-center flex-col items-center">
-        <div class="mt-[35px]">
-            <Title label="Descargar Ban Game Launcher"/>
+    {soon ? (
+        <div class="flex flex-col items-center justify-center center pt-[220px] pb-[220px]">
+            <Title>Descargar Ban Game Launcher</Title>
+            <p class="mt-[10px] text-[1rem] text-[darkgrey] max-w-[600px]">Próximamente...</p>
         </div>
-        <DownloadButton/>
-        <div class="flex justify-center mt-[40px] mb-[40px]">
-            <Image src={launcher} alt="Launcher" loading="eager" quality="high" class="w-[90%] h-[90%] max-w-[1000px] rounded-[10px] object-cover drop-shadow-[0_0_20px_rgba(42,42,42,0.250)] border-[1.5px] border-[#ffffff3e]" onload="this.parentElement.classList.add('animate-fade-up')"/>
+    ) : (
+        <div class="flex justify-center flex-col items-center">
+            <div class="mt-[35px]">
+                <Title>Descargar Ban Game Launcher</Title>
+            </div>
+            <DownloadButton/>
+            <div class="flex justify-center mt-[40px] mb-[40px]">
+                <Image src={launcher} alt="Launcher" loading="eager" quality="high" class="w-[90%] h-[90%] max-w-[1000px] rounded-[10px] object-cover drop-shadow-[0_0_20px_rgba(42,42,42,0.250)] border-[1.5px] border-[#ffffff3e]" onload="this.parentElement.classList.add('animate-fade-up')"/>
+            </div>
         </div>
-    </div>-->
-
-    <div class="flex flex-col items-center justify-center center pt-[220px] pb-[220px]">
-        <Title label="Descargar Ban Game Launcher"/>
-        <p class="mt-[10px] text-[1rem] text-[darkgrey] max-w-[600px]">Proximamente...</p>
-    </div>
+    )}
 </Layout>
 
 <style>
