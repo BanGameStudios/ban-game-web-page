@@ -7,7 +7,11 @@ const proyectos = defineCollection({
         date: z.string(),
         desc: z.string(),
         order: z.number(),
-        gallery: z.boolean().optional(),
+        gallery: z.array(z.object({
+            type: z.string(),
+            src: z.string().url(),
+            title: z.string()
+        })).optional()
     })
 })
 

@@ -3,7 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import Title from '../../components/Title.astro';
 import { getCollection, render } from 'astro:content';
 import YTVideo from '../../components/YTVideo.astro';
+import { Tweet } from '@astro-community/astro-embed-twitter'
 import { Image } from 'astro:assets';
+import MiniTitle from '../../components/MiniTitle.astro';
 
 export async function getStaticPaths() {
     const proyectos = await getCollection('proyectos');
@@ -21,6 +23,8 @@ const { title, type, date, desc, gallery } = data
 const { Content } = await render(proyecto)
 
 const { default: image } = await import(`../../assets/projects/${slug}.webp`)
+
+const videos = gallery ? gallery.filter(item => item.type === "video") : [];
 ---
 
 <Layout title={title} desc={desc} image={`/projects/${slug}.webp`}>
@@ -39,13 +43,16 @@ const { default: image } = await import(`../../assets/projects/${slug}.webp`)
             <Content/>
         </div>
 
-        {gallery && (
+        {videos.length > 0 && (
             <div class="mt-[20px]">
-                <Title>Videos Destacados</Title>
+                <MiniTitle>Galeria</MiniTitle>
             </div>
-
-            <YTVideo url="https://www.youtube.com/watch?v=BcpE8pbG9Nk" title="TRAILER OFICIAL DE #RandomSMP 🚬 | BanGameStudios"/>
-            <YTVideo url="https://www.youtube.com/watch?v=-7gS_myLcRU" title="Cinematica Inicial de RandomSMP | BanGameStudios"/>
         )}
+        
+        {
+            videos.map(video => (
+                <YTVideo url={video.src} title={video.title}/>
+            ))
+        }
     </div>
 </Layout>
