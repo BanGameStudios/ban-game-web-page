@@ -5,6 +5,7 @@ import { getCollection, render } from 'astro:content';
 import YTVideo from '../../components/YTVideo.astro';
 import { Image } from 'astro:assets';
 import MiniTitle from '../../components/MiniTitle.astro';
+import MainPage from '../../components/MainPage.astro';
 
 export async function getStaticPaths() {
     const proyectos = await getCollection('proyectos');
@@ -23,35 +24,30 @@ const { Content } = await render(proyecto)
 
 const { default: image } = await import(`../../assets/projects/${slug}.webp`)
 
-const videos = gallery ? gallery.filter(item => item.type === "video") : [];
+const videos = gallery ? gallery.filter((item: { type: string; }) => item.type === "video") : [];
 ---
 
 <Layout title={title} desc={desc} image={`/projects/${slug}.webp`}>
-    <div class="flex justify-center flex-col items-center mb-[25px]">
-        <div class="flex flex-col items-center">
-            <Image src={image} alt={title} quality="high" class="absolute mt-[20px] w-[260px] h-[260px] object-cover opacity-[0.25] justify-center z-[-10] blur-[1rem]"/>
+    
+    <MainPage class="mb-6">
+        <section class="flex flex-col justify-center items-center">
+            <Image src={image} alt={title} quality="high" class="absolute mt-[22px] w-[260px] h-[260px] object-cover opacity-[0.25] justify-center z-[-10] blur-[1rem]"/>
             <Image src={image} alt={title} quality="high" class="w-[250px] h-[250px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out flex justify-center mt-[25px] group" transition:name={slug}/>
-        </div>
-        <div class="mt-[20px]">
-            <Title>{title}</Title>
-        </div>
-        <div class="p-0 m-0 mt-[10px] text-[1rem] text-[#7b7b7b]">
-            {type} - {date}
-        </div>
-        <div class="p-0 pl-[20px] pr-[20px] mt-[20px] max-w-[800px] prose prose-invert">
+        </section>
+        <Title class="mt-5">{title}</Title>
+        <p class="mt-[10px] text-[1rem] text-[#7b7b7b]">{type} - {date}</p>
+        <div class="px-5 mt-5 max-w-[800px] prose prose-invert">
             <Content/>
         </div>
 
         {videos.length > 0 && (
-            <div class="mt-[20px]">
-                <MiniTitle>Galeria</MiniTitle>
-            </div>
+            <MiniTitle class="mt-5">Galeria</MiniTitle>
         )}
         
         {
-            videos.map(video => (
+            videos.map((video) => (
                 <YTVideo url={video.src} title={video.title}/>
             ))
         }
-    </div>
+    </MainPage>
 </Layout>

@@ -3,110 +3,35 @@ import NavButtons from "./NavButtons.astro";
 ---
 
 <header class="flex items-center text-white bg-[rgba(0,0,0,0.6)] backdrop-blur-[8px] fixed top-0 left-0 w-full h-[55px] z-[1000]">
-    <div class="nav-buttons">
+    <nav class="flex gap-5 pl-5 max-[960px]:hidden">
         <NavButtons/>
-    </div>
-    <div class="title">
-        <a href="/">BAN GAME STUDIOS</a>
-    </div>
-    <a href="/launcher" class="download-button">
-        <span class="icon">Ban Game Launcher</span>
+    </nav>
+
+    <a class="text-[1.5em] font-bold text-center justify-center absolute transition-colors duration-300 ease top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-[720px]:hidden hover:text-[#ccc]" href="/">BAN GAME STUDIOS</a>
+
+    <a href="/launcher" class="flex absolute right-0 items-center px-3.5 pb-0.5 bg-[#333] rounded-[20px] mr-2 border-2 border-transparent transition-all duration-300 ease hover:bg-[#222222] hover:border-white text-[1.1em]">
+        Ban Game Launcher
     </a>
 
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="hamburger hidden gap-[5px] cursor-pointer ml-5 mt-[5px] z-[1001] relative w-[30px] h-[25px] max-[960px]:flex flex-col" id="hamburger">
+        <span class="block w-[30px] h-[3px] bg-white rounded-[3px] transition-all duration-300 ease-in-out"></span>
+        <span class="block w-[30px] h-[3px] bg-white rounded-[3px] transition-all duration-150 ease-in-out"></span>
+        <span class="block w-[30px] h-[3px] bg-white rounded-[3px] transition-all duration-300 ease-in-out"></span>
     </div>
 </header>
 
-<div class="menu" id="menu">
+<div class="menu fixed top-[50px] left-0 w-full h-full bg-[#000000e6] flex flex-col gap-5 p-5 z-[999]" id="menu">
     <NavButtons/>
 </div>
 
 <style>
-    .nav-buttons {
-        display: flex;
-        gap: 20px;
-        padding-left: 20px;
-        @apply max-[960px]:hidden
-    }
-
-    .title a {
-        display: flex;
-        font-size: 1.5em;
-        font-weight: bold;
-        text-align: center;
-        justify-content: center;
-        text-decoration: none;
-        color: #fff;
-        position: absolute;
-        transition: color 0.3s ease;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        @apply max-[720px]:hidden
-    }
-
-    .title a:hover {
-        color: #ccc;
-    }
-
-    .download-button {
-        display: flex;
-        position: absolute;
-        right: 0;
-        align-items: center;
-        padding: 0px 15px 2px;
-        background-color: #333;
-        border-radius: 20px;
-        text-decoration: none;
-        color: #fff;
-        border: 2px solid transparent;
-        transition: background 0.3s ease, border 0.3s ease;
-        margin-right: 8px;
-    }
-
-    .download-button:hover {
-        background-color: #222222;
-        border: 2px solid #fff;
-    }
-
-    .icon {
-        font-size: 1.1em;
-    }
-
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        margin-left: 20px;
-        margin-top: 5px;
-        z-index: 1001;
-        position: relative;
-        width: 30px;
-        height: 25px;
-        @apply max-[960px]:flex
-    }
-
-    .hamburger span {
-        display: block;
-        width: 30px;
-        height: 3px;
-        background-color: #fff;
-        border-radius: 3px;
-        transition: transform 0.3s ease-in-out, opacity 0.15s ease-in-out; /* Diferente duración para la opacidad */
-    }
-
-    /* Animación para convertir el botón en "X" */
     .hamburger.open span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
     .hamburger.open span:nth-child(2) {
         opacity: 0;
-        transition: opacity 0.1s ease-in-out; /* Desaparece más rápido */
+        transition: opacity 0.1s ease-in-out;
     }
 
     .hamburger.open span:nth-child(3) {
@@ -118,18 +43,6 @@ import NavButtons from "./NavButtons.astro";
     }
 
     .menu {
-        position: fixed;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        height: calc(100% - 35px);
-        background-color: rgba(0, 0, 0, 0.9);
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-        z-index: 999;
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
     }

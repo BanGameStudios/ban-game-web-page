@@ -3,14 +3,15 @@ import ProjectCard from '../../components/ProjectCard.astro';
 import Layout from '../../layouts/Layout.astro';
 import Title from '../../components/Title.astro';
 import Banner from '../../components/Banner.astro';
+import MainPage from '../../components/MainPage.astro';
 ---
 
 <Layout title="Proyectos" image="/pages/proyectos.webp" desc="Proyectos (eventos y series) que hemos realizado.">
     <Banner src="banner2"/>
-    <div class="flex flex-col justify-center items-center">
+    <MainPage>
         <Title>Proyectos</Title>
         <div class="mb-[35px] mt-[20px]">
             <ProjectCard/>
         </div>
-    </div>
+    </MainPage>
 </Layout>

@@ -1,5 +1,6 @@
 ---
 const currentPath = Astro.url.pathname;
+
 const sections = [
     {
         label: 'Inicio',
@@ -24,26 +25,8 @@ const sections = [
 
 {
     sections.map(section => (
-        <a href={section.href} title={section.desc} class={currentPath === section.href ? "active" : ""}>
+        <a href={section.href} title={section.desc} class={`text-[1.1em] transition-colors duration-300 ease hover:text-[#ccc] ${currentPath === section.href ? "text-[#7b7b7b] font-bold" : ""}`}>
             {section.label}
         </a>
     ))
 }
-
-<style>
-    a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.1em;
-        transition: color 0.3s ease;
-    }
-
-    a.active {
-        color: #7b7b7b;
-        font-weight: bold;
-    }
-
-    a:hover {
-        color: #ccc;
-    }
-</style>
