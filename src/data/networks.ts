@@ -28,18 +28,8 @@ export const networks = [
         icon: Modrinth
     },
     {
-        alt: 'Discord',
-        href: 'https://discord.gg/sKRYYyVCnw',
-        icon: Discord
-    },
-    {
         alt: 'GitHub',
         href: 'https://github.com/bangamestudios',
         icon: GitHub
-    },
-    {
-        alt: 'Mail',
-        href: 'mailto:contacto@bangame.tech',
-        icon: Mail
     },
 ]

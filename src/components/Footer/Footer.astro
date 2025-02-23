@@ -1,10 +1,34 @@
 ---
-import Title from "./Title.astro"
-import Links from "./Links.astro"
 import Networks from "./Networks.astro"
+import Column from "./Column.astro"
+
+const COMPANY = [
+    {
+        name: "Acerca de",
+        url: "/acerca/"
+    },
+    {
+        name: "Contacto",
+        url: "https://forms.gle/Vk2Grabxz814EiZ58"
+    }
+]
+
+const COMMUNITY = [
+    {
+        name: "Discord",
+        url: "https://discord.gg/sKRYYyVCnw"
+    }
+]
+
+const LEGAL = [
+    {
+        name: "Terminos y Condiciones",
+        url: "/terminos/"
+    }
+]
 ---
 
-<footer class="relative bg-[#1c1c1c] mt-auto px-[50px] pt-[20px] pb-[20px]">
+<!-- <footer class="relative bg-[#1c1c1c] mt-auto px-[50px] pt-[20px] pb-[20px]">
     <div class="flex items-start flex-wrap max-[960px]:flex-col max-[960px]:items-center max-[960px]:text-center ">
         <section class="flex-[3]">
             <Title>BAN GAME STUDIOS</Title>
@@ -36,4 +60,28 @@ import Networks from "./Networks.astro"
     </div>
 
     <Networks/>
+</footer> -->
+
+<footer class="bg-[#1c1c1c] mt-auto">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="/" class="flex items-center">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white hover:text-[#ccc] transition-colors duration-300 ease">BAN GAME STUDIOS</span>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <Column col={COMPANY} title="Compania"/>
+                <Column col={COMMUNITY} title="Comunidad"/>
+                <Column col={LEGAL} title="Legal"/>
+            </div>
+        </div>
+
+        <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-base sm:text-center text-gray-400">© 2025 <a class="text-white hover:text-[#ccc] transition-colors duration-300 ease" href="/">Ban Game Studios</a>.</span>
+            <Networks/>
+        </div>
+    </div>
 </footer>

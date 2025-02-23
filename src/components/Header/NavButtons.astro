@@ -25,8 +25,10 @@ const sections = [
 
 {
     sections.map(section => (
-        <a href={section.href} title={section.desc} class={`text-[1.1em] transition-colors duration-300 ease hover:text-[#ccc] ${currentPath === section.href ? "text-[#7b7b7b] font-bold" : ""}`}>
-            {section.label}
-        </a>
+        <li>
+            <a href={section.href} title={section.desc} class={` transition-colors duration-300 ease hover:text-[#ccc] ${currentPath === section.href ? "text-[#9a9999] font-medium" : ""}`}>
+                {section.label}
+            </a>
+        </li>
     ))
 }
