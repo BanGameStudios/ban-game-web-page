@@ -12,14 +12,14 @@ const soon = true;
 <Layout title="Launcher" desc="Launcher oficial de Ban Game Studios para unirte a nuestros eventos y series.">
     {soon ? (
         <MainPage class="h-[600px]">
-            <Title>Descargar Ban Game Launcher</Title>
+            <Title>Ban Game Launcher</Title>
             <p class="mt-[10px] text-[1rem] text-[darkgrey] max-w-[600px]">Próximamente...</p>
         </MainPage>
     ) : (
-        <MainPage>
-            <Title class="mt-[35px]">Descargar Ban Game Launcher</Title>
+        <MainPage class="mb-[40px] mt-[35px]">
+            <Title>Ban Game Launcher</Title>
             <DownloadButton/>
-            <Image src={launcher} alt="Launcher" loading="eager" quality="high" class="w-[90%] h-[90%] max-w-[1000px] rounded-[10px] object-cover drop-shadow-[0_0_20px_rgba(42,42,42,0.250)] border-[1.5px] border-[#ffffff3e] mt-[40px] mb-[40px]" onload="this.parentElement.classList.add('animate-fade-up')"/>
+            <Image src={launcher} alt="Launcher" loading="eager" quality="high" class="w-[90%] h-[90%] max-w-[900px] rounded-[10px] object-cover drop-shadow-[0_0_20px_rgba(42,42,42,0.250)] border-[1.5px] border-[#ffffff3e] mt-[40px]" onload="this.parentElement.classList.add('animate-fade-up')"/>
         </MainPage>
     )}
 </Layout>

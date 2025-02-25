@@ -7,9 +7,9 @@ import NavButtons from "./NavButtons.astro";
     <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-3">
 
         <div class="hamburger hidden gap-[5px] cursor-pointer ml-3 mt-[5px] z-[1001] relative w-[30px] h-[25px] max-[960px]:flex flex-col" id="hamburger">
-            <span class="block w-[30px] h-[3px] bg-white rounded-[3px] transition-all duration-300 ease-in-out"></span>
-            <span class="block w-[30px] h-[3px] bg-white rounded-[3px] transition-all duration-150 ease-in-out"></span>
-            <span class="block w-[30px] h-[3px] bg-white rounded-[3px] transition-all duration-300 ease-in-out"></span>
+            <span class="block w-[28px] h-[3px] bg-white rounded-[3px] transition-all duration-300 ease-in-out"></span>
+            <span class="block w-[28px] h-[3px] bg-white rounded-[3px] transition-all duration-150 ease-in-out"></span>
+            <span class="block w-[28px] h-[3px] bg-white rounded-[3px] transition-all duration-300 ease-in-out"></span>
         </div>
         
         <nav>
@@ -20,7 +20,7 @@ import NavButtons from "./NavButtons.astro";
 
         <a class="text-[1.5em] font-bold text-center justify-center absolute transition-colors duration-300 ease top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-[720px]:hidden hover:text-[#ccc]" href="/">BAN GAME STUDIOS</a>
     
-        <a href="/launcher" class="flex flex-row items-center gap-1.5 px-3.5 p-0.5 bg-[#333] rounded-[15px] border-2 border-transparent transition-all duration-300 ease hover:bg-[#222222]">
+        <a href="/launcher" class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222]">
             <Download class="w-5 h-5"/>
             Ban Game Launcher
         </a>
@@ -62,32 +62,27 @@ import NavButtons from "./NavButtons.astro";
 </style>
 
 <script>
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("menu");
+    init();
 
-    if (hamburger != null) {
-        hamburger.addEventListener("click", toggleMenu);
-        window.addEventListener("resize", handleResize);
+    document.addEventListener('astro:after-swap', () => {
+        init();
+    });
 
-        document.addEventListener('astro:after-swap', () => {
-            hamburger.addEventListener("click", toggleMenu);
-            window.addEventListener("resize", handleResize);
+    function init () {
+        const hamburger = document.getElementById("hamburger");
+        const menu = document.getElementById("menu");
+
+        if (hamburger == null || menu == null) return;
+
+        hamburger.addEventListener("click", () => {
+                menu.classList.toggle("open");
+                hamburger.classList.toggle("open");
         });
-    }
-
-    function toggleMenu() {
-        if (menu == null || hamburger == null) return;
-
-        menu.classList.toggle("open");
-        hamburger.classList.toggle("open");
-    }
-
-    function handleResize() {
-        if (window.innerWidth >= 960) {
-            if (menu == null || hamburger == null) return;
-
-            menu.classList.remove("open");
-            hamburger.classList.remove("open");
-        }
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 960) {
+                menu.classList.remove("open");
+                hamburger.classList.remove("open");
+            }
+        });
     }
 </script>

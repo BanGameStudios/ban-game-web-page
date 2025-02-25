@@ -4,13 +4,15 @@ import Layout from '../../layouts/Layout.astro';
 import Title from '../../components/Title.astro';
 import Banner from '../../components/Banner.astro';
 import MainPage from '../../components/MainPage.astro';
+import Desc from '../../components/Desc.astro';
 ---
 
 <Layout title="Proyectos" image="/pages/proyectos.webp" desc="Proyectos (eventos y series) que hemos realizado.">
     <Banner src="banner2"/>
     <MainPage>
-        <Title>Proyectos</Title>
-        <div class="mb-[35px] mt-[20px]">
+        <Title class="mb-2">Proyectos</Title>
+        <Desc>Los proyectos que hemos realizado a lo largo del tiempo desde nuestra fundación.</Desc>
+        <div class="mb-6 mt-6">
             <ProjectCard/>
         </div>
     </MainPage>

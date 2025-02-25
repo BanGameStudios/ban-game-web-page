@@ -32,4 +32,9 @@ export const networks = [
         href: 'https://github.com/bangamestudios',
         icon: GitHub
     },
+    {
+        alt: "Mail",
+        href: 'mailto:contacto@bangame.tech',
+        icon: Mail
+    }
 ]

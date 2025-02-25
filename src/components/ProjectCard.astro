@@ -30,7 +30,7 @@ const projectPictures = await Promise.all(
             <Image src={avatar} alt={title} quality="high" class="w-[200px] h-[200px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out mt-[1.2rem] hover:scale-[1.05]" transition:name={slug} />
           </a>
           <div class="mt-[8px] p-[8px] text-[1.4rem] font-semibold">{title}</div>
-          <p class="text-[1rem] text-[#7b7b7b]">{type} - {date}</p>
+          <p class="text-[#7b7b7b] font-medium">{type} - {date}</p>
         </article>
       )
     })

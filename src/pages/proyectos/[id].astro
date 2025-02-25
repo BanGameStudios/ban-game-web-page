@@ -6,6 +6,9 @@ import YTVideo from '../../components/YTVideo.astro';
 import { Image } from 'astro:assets';
 import MiniTitle from '../../components/MiniTitle.astro';
 import MainPage from '../../components/MainPage.astro';
+import Prev from '../../components/Icons/Prev.astro';
+import Next from '../../components/Icons/Next.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
 
 export async function getStaticPaths() {
     const proyectos = await getCollection('proyectos');
@@ -28,26 +31,71 @@ const videos = gallery ? gallery.filter((item: { type: string; }) => item.type =
 ---
 
 <Layout title={title} desc={desc} image={`/projects/${slug}.webp`}>
-    
     <MainPage class="mb-6">
         <section class="flex flex-col justify-center items-center">
             <Image src={image} alt={title} quality="high" class="absolute mt-[22px] w-[260px] h-[260px] object-cover opacity-[0.25] justify-center z-[-10] blur-[1rem]"/>
             <Image src={image} alt={title} quality="high" class="w-[250px] h-[250px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out flex justify-center mt-[25px] group" transition:name={slug}/>
         </section>
         <Title class="mt-5">{title}</Title>
-        <p class="mt-[10px] text-[1rem] text-[#7b7b7b]">{type} - {date}</p>
-        <div class="px-5 mt-5 max-w-[800px] prose prose-invert">
+        <p class="mt-[10px] font-medium text-[#7b7b7b]">{type} - {date}</p>
+        <div class="px-4 mt-5 max-w-[800px] prose prose-invert">
             <Content/>
         </div>
 
         {videos.length > 0 && (
-            <MiniTitle class="mt-5">Galeria</MiniTitle>
+            <>
+                <MiniTitle class="mt-5">Galeria</MiniTitle>
+                <div class="w-[calc(100vw-20px)] pr-2.5 pl-2.5 max-w-[800px] mt-5 mb-5 overflow-hidden">
+                    <div id="carousel" class="flex items-center space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+                        {
+                            videos.map((video) => (
+                                <div class="w-[370px] snap-start shrink-0 overflow-hidden">
+                                    <YTVideo url={video.src} title={video.title}/>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div class="flex flex-row gap-2">
+                    <button id="prev" class="bg-[#333] hover:bg-[#222222] transition-colors duration-300 ease text-white p-2 rounded-full"><Prev class="w-6 h-6"/></button>
+                    <button id="next" class="bg-[#333] hover:bg-[#222222] transition-colors duration-300 ease text-white p-2 rounded-full"><Next class="w-6 h-6"/></button>
+                </div>
+            </>
         )}
+
         
-        {
-            videos.map((video) => (
-                <YTVideo url={video.src} title={video.title}/>
-            ))
-        }
     </MainPage>
 </Layout>
+
+<style>
+    #carousel::-webkit-scrollbar {
+        display: none;
+    }
+    #carousel {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<script>
+    init();
+
+    document.addEventListener('astro:after-swap', init);
+
+    function init () {
+        const carousel = document.getElementById('carousel');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+
+        if (next == null || prev == null || carousel == null) return;
+        
+        next.addEventListener('click', () => {
+            carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+        
+        prev.addEventListener('click', () => {
+            carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+    }
+</script>

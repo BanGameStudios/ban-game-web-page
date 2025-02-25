@@ -1,0 +1,24 @@
+---
+import { getCollection, render } from "astro:content";
+import Banner from "../components/Banner.astro";
+import MainPage from "../components/MainPage.astro";
+import Title from "../components/Title.astro";
+import Layout from "../layouts/Layout.astro";
+
+const info = await getCollection('info')
+const about = info.find((about) => about.slug == "about")
+
+const { Content } = await render(about)
+---
+
+<Layout title="Sobre Nosotros" desc="Información e historia de Ban Game Studios.">
+    <Banner src="banner4"/>
+    <MainPage class="mb-10">
+        <section id="about" class="flex flex-col justify-center items-center">
+            <Title>Sobre Nosotros</Title>
+            <div class="px-4 mt-4 max-w-[800px] prose prose-invert text-left">
+                <Content/>
+            </div>
+        </section>
+    </MainPage>
+</Layout>

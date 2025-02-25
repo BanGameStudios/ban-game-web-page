@@ -15,4 +15,6 @@ const proyectos = defineCollection({
     })
 })
 
-export const collections = { proyectos }
+const info = defineCollection({})
+
+export const collections = { proyectos, info }

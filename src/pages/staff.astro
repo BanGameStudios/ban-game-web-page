@@ -8,25 +8,29 @@ import { afiliados } from '../data/staff';
 import { activos } from '../data/staff';
 import { soporte } from '../data/staff';
 import MainPage from '../components/MainPage.astro';
+import BriefCase from '../components/Icons/BriefCase.astro';
+import MiniTitle from '../components/MiniTitle.astro';
+import Desc from '../components/Desc.astro';
 ---
 
 <Layout title="Staff" image="/pages/staff.webp" desc="Equipo de Ban Game Studios.">
     <Banner src="banner3"/>
-    <MainPage>
-      <Title class="mb-[20px]">¿Quieres formar parte del equipo de Ban Game Studios?</Title>
-      <a class="items-center  px-[25px] pt-[13px] pb-[15px] bg-[#333] rounded-[20px] no-underline text-white border-2 border-transparent mr-[10px] mb-[1px] transition-all duration-300 ease-in hover:bg-[#222222] hover:border-white" href="https://forms.gle/GyRteA8iBDUffygz9">
-        <span class="text-[1.6em]">¡Postulate aqui!</span>
+    <MainPage class="mb-[35px]">
+      <MiniTitle class="mb-[20px]">¿Quieres formar parte del equipo de Ban Game Studios?</MiniTitle>
+      <a class="flex flex-row items-center gap-2 px-5 py-3 bg-[#333] rounded-[20px] text-white transition-all duration-300 ease-in hover:bg-[#222222]" href="https://forms.gle/GyRteA8iBDUffygz9">
+        <BriefCase class="w-8 h-8"/>
+        <span class="text-[1.6em]">Postulate aqui</span>
       </a>
 
-      <Title class="mt-[40px] mb-[20px]">Afiliados</Title>
+      <MiniTitle class="mt-[40px] mb-2">Afiliados</MiniTitle>
+      <Desc class="mb-[20px]">Organizaciones que nos apoyan actualmente en distintos aspectos.</Desc>
       <StaffCard profiles={afiliados}/>
 
-      <Title class="mt-[40px] mb-[20px]">Staff Activo</Title>
+      <MiniTitle class="mt-[40px] mb-2">Staff Activo</MiniTitle>
+      <Desc class="mb-[20px]">Parte del staff que más contribuye a la hora de crear un proyecto.</Desc>
       <StaffCard profiles={activos}/>
 
-      <Title class="mt-[40px] mb-[20px]">Staff de Soporte</Title>
-      <div class="mb-[35px]">
-          <StaffCard profiles={soporte}/>
-      </div>
+      <MiniTitle class="mt-[40px] mb-[20px]">Staff de Soporte</MiniTitle>
+      <StaffCard profiles={soporte}/>
     </MainPage>
 </Layout>

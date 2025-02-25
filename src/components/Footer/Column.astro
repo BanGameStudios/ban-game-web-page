@@ -11,7 +11,7 @@ const COL = Astro.props.col
         {
             COL.map((col: any) => (
                 <li>
-                    <a href={col.url} class="hover:underline">{col.name}</a>
+                    <a href={col.url} target={`${col.blank === true ? "_blank" : ""}`} class="hover:underline">{col.name}</a>
                 </li>
             ))
         }

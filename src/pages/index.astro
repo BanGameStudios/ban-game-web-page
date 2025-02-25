@@ -3,15 +3,90 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Banner from '../components/Banner.astro';
 import MainPage from '../components/MainPage.astro';
+import MiniTitle from '../components/MiniTitle.astro';
+import Next from '../components/Icons/Next.astro';
+import Prev from '../components/Icons/Prev.astro';
+
+const VIDEOS = [
+    {
+        id: "BcpE8pbG9Nk",
+        desc: "TRAILER OFICIAL DE #RandomSMP 🚬 | BanGameStudios"
+    },
+    {
+        id: "-7gS_myLcRU",
+        desc: "Cinematica Inicial de RandomSMP | BanGameStudios"
+    },
+    {
+        id: "EORvdnrSQYk",
+        desc: "Teaser de nuestra próxima serie | BanGameStudios"
+    },
+    {
+        id: "rFUqIviVQnY",
+        desc: "Trailer de presentación de Un UHC Más 2 | BanGameStudios"
+    }
+]
 ---
 
 <Layout title="Ban Game Studios" image="/pages/index.webp" desc="Estudio de desarrollo de servidores (eventos o series) de Minecraft Semi-profesionales.">
     <Banner src="banner"/>
-    <MainPage class="mb-[60px]">
-        <section class="max-w-[500px] text-center">
+    <MainPage class="mb-[60px] text-center">
+        <section class="max-w-[500px]">
             <Title>BAN GAME STUDIOS</Title>
-            <h2 class="text-[1.2rem] text-[#555] mt-0">Creando para creadores.</h2>
-            <p class="mt-[10px] pl-5 pr-5 text-[1rem] text-white">Estudio de desarrollo de servidores (eventos o series) de Minecraft Semi-profesionales.</p>
+            <h2 class="text-[1.2rem] mb-2.5 text-[#555] font-medium">Creando para creadores.</h2>
+            <p class=`text-[oklch(0.872_0.01_258.338)] px-4`>Estudio de desarrollo de servidores (eventos o series) de Minecraft Semi-profesionales. <a href="/sobre/" class="text-white hover:text-[#ccc] transition-colors duration-300 ease">Saber más...</a></p>
+        </section>
+        
+        <section class="flex flex-col justify-center items-center mt-10">
+            <MiniTitle>Videos destacados</MiniTitle>
+
+            <div class="w-[calc(100vw-20px)] pr-2.5 pl-2.5 max-w-[800px] mt-5 mb-5 overflow-hidden">
+                <div id="carousel" class="flex items-center space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+                    {
+                        VIDEOS.map(video => (
+                            <a href={`https://www.youtube.com/watch?v=${video.id}`} title={video.desc} target="_blank" class="rounded-lg shadow-lg snap-start block w-[370px] h-[200px] shrink-0 overflow-hidden">
+                                <img src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} alt="Video" class="w-full h-full object-cover hover:scale-[1.1] transition duration-300 ease"/>
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-2">
+                <button id="prev" class="bg-[#333] hover:bg-[#222222] transition-colors duration-300 ease text-white p-2 rounded-full"><Prev class="w-6 h-6"/></button>
+                <button id="next" class="bg-[#333] hover:bg-[#222222] transition-colors duration-300 ease text-white p-2 rounded-full"><Next class="w-6 h-6"/></button>
+            </div>
         </section>
     </MainPage>
 </Layout>
+
+<style>
+    #carousel::-webkit-scrollbar {
+        display: none;
+    }
+    #carousel {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<script>
+    init();
+
+    document.addEventListener('astro:after-swap', init);
+
+    function init () {
+        const carousel = document.getElementById('carousel');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+
+        if (next == null || prev == null || carousel == null) return;
+        
+        next.addEventListener('click', () => {
+            carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+        
+        prev.addEventListener('click', () => {
+            carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+    }
+</script>
