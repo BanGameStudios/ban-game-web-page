@@ -39,7 +39,7 @@ export const activos = [
         avatar: "tgb"
     },
     {
-        name: "JuanXD", 
+        name: "Dizzy", 
         link: "https://x.com/JuanXDC4D",
         skills: "Diseñador 3D, Compositor",
         avatar: "juanxd"
