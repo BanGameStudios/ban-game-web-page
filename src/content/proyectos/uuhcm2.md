@@ -1,7 +1,7 @@
 ---
 title: Un UHC Más 2
 type: Evento
-date: "2025"
+date: 2025/03
 desc: Proximamente...
 order: 4
 

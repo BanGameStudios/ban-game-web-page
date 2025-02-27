@@ -1,7 +1,7 @@
 ---
 title: Un Hunger Games Más
 type: Evento
-date: 2024/9
+date: 2024/09
 desc: Un Hunger Games Más es un evento PvP basado en la famosa modalidad conocida como Hunger Games pero con la gran adición de las armas de fuego.
 order: 3
 ---

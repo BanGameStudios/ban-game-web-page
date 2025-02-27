@@ -6,23 +6,24 @@ import MainPage from '../components/MainPage.astro';
 import MiniTitle from '../components/MiniTitle.astro';
 import Next from '../components/Icons/Next.astro';
 import Prev from '../components/Icons/Prev.astro';
+import YTVideo from '../components/YTVideo.astro';
 
-const VIDEOS = [
+const videos = [
     {
-        id: "BcpE8pbG9Nk",
-        desc: "TRAILER OFICIAL DE #RandomSMP 🚬 | BanGameStudios"
+        src: "BcpE8pbG9Nk",
+        title: "TRAILER OFICIAL DE #RandomSMP 🚬 | BanGameStudios"
     },
     {
-        id: "-7gS_myLcRU",
-        desc: "Cinematica Inicial de RandomSMP | BanGameStudios"
+        src: "-7gS_myLcRU",
+        title: "Cinematica Inicial de RandomSMP | BanGameStudios"
     },
     {
-        id: "EORvdnrSQYk",
-        desc: "Teaser de nuestra próxima serie | BanGameStudios"
+        src: "EORvdnrSQYk",
+        title: "Teaser de nuestra próxima serie | BanGameStudios"
     },
     {
-        id: "rFUqIviVQnY",
-        desc: "Trailer de presentación de Un UHC Más 2 | BanGameStudios"
+        src: "rFUqIviVQnY",
+        title: "Trailer de presentación de Un UHC Más 2 | BanGameStudios"
     }
 ]
 ---
@@ -42,10 +43,10 @@ const VIDEOS = [
             <div class="w-[calc(100vw-20px)] pr-2.5 pl-2.5 max-w-[800px] mt-5 mb-5 overflow-hidden">
                 <div id="carousel" class="flex items-center space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory">
                     {
-                        VIDEOS.map(video => (
-                            <a href={`https://www.youtube.com/watch?v=${video.id}`} title={video.desc} target="_blank" class="rounded-lg shadow-lg snap-start block w-[370px] h-[200px] shrink-0 overflow-hidden">
-                                <img src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} alt="Video" class="w-full h-full object-cover hover:scale-[1.1] transition duration-300 ease"/>
-                            </a>
+                        videos.map((video) => (
+                            <div class="w-[370px] snap-start shrink-0 overflow-hidden">
+                                <YTVideo url={video.src} title={video.title}/>
+                            </div>
                         ))
                     }
                 </div>

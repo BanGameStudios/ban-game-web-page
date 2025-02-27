@@ -1,7 +1,7 @@
 ---
 title: RandomSMP
 type: Serie
-date: 2024/1
+date: 2024/01
 desc: RandomSMP es una serie semi-roleplay con más de 100 mods que duró un mes, basada en el PvE y dungeons.
 order: 1
 
