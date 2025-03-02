@@ -8,9 +8,10 @@ export interface Profile {
 	title: string;
 	desc?: string;
 	image?: string;
+	redirect?: string;
 }
 
-const { title, desc, image } = Astro.props;
+const { title, desc, image, redirect } = Astro.props;
 
 import "../styles/global.css";
 ---
@@ -23,6 +24,12 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/icon.svg"/>
 		<meta name="generator" content={Astro.generator} />
 		
+		{
+			redirect != null ? (
+				<meta http-equiv="refresh" content={`0; url=${redirect}`} />
+			) : ""
+		}
+
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={desc} />
