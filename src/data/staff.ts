@@ -50,6 +50,12 @@ export const activos = [
         skills: "Guionista, Ayudante",
         avatar: "wasa"
     },
+    {
+        name: "Fitz",
+        link: "https://x.com/fitzxel",
+        skills: "Programador",
+        avatar: "fitz"
+    },
 ];
 
 export const soporte = [
@@ -66,15 +72,15 @@ export const soporte = [
         avatar: "srm"
     },
     {
-        name: "Fitz",
-        link: "https://x.com/fitzxel",
-        skills: "Programador",
-        avatar: "fitz"
-    },
-    {
         name: "Salmon",
         link: "https://linktr.ee/sannsalmon",
         skills: "Compositor",
         avatar: "salmon"
+    },
+    {
+        name: "vH Alex",
+        link: "https://x.com/vHAleX211",
+        skills: "Ayudante",
+        avatar: "alex"
     },
 ];

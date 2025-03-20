@@ -4,6 +4,30 @@ type: Evento
 date: 2024/06
 desc: Un UHC Más es un evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones.
 order: 2
+
+credits:
+- name: "Minemu"
+  link: "https://minemu.es/"
+  skills: "Host (Servidor)"
+  avatar: "minemu"
+- name: "Katto"
+  link: "https://linktr.ee/katto1"
+  skills: "Desarrollo Completo"
+  avatar: "katto"
+- name: "FranNazurRM"
+  skills: "Moderación"
+  avatar: "no"
+- name: "Dizzy"
+  link: "https://x.com/JuanXDC4D"
+  skills: "Moderación"
+  avatar: "juanxd"
+- name: "Sir"
+  link: "https://x.com/Sir4565"
+  skills: "Moderación"
+  avatar: "sir"
+- name: "T.G.B"
+  skills: "Moderación"
+  avatar: "tgb"
 ---
 Un UHC Más es un evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones, en donde 10 equipos de 4 personas tuvieron que combatir para ver cual es el mejor y llevarse el premio de 100 BITS.
 

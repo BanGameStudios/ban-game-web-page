@@ -5,6 +5,30 @@ date: 2024/01
 desc: RandomSMP es una serie semi-roleplay con más de 100 mods que duró un mes, basada en el PvE y dungeons.
 order: 1
 
+credits:
+- name: "Crysis Studios"
+  link: "https://crysistudio.xyz/"
+  skills: "Construcción, Diseño"
+  avatar: "crysis"
+- name: "Katto"
+  link: "https://linktr.ee/katto1"
+  skills: "Dirección, Programación, Administración"
+  avatar: "katto"
+- name: "FranNazurRM"
+  skills: "Ayudante, Administración"
+  avatar: "no"
+- name: "Dizzy"
+  link: "https://x.com/JuanXDC4D"
+  skills: "Diseño 3D, Administración"
+  avatar: "juanxd"
+- name: "Sir"
+  link: "https://x.com/Sir4565"
+  skills: "Constructor, Ayudante, Administración"
+  avatar: "sir"
+- name: "T.G.B"
+  skills: "Ayudante, Administración"
+  avatar: "tgb"
+
 gallery:
 - type: video
   src: https://www.youtube.com/watch?v=BcpE8pbG9Nk

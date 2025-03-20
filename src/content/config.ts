@@ -11,6 +11,12 @@ const proyectos = defineCollection({
             type: z.string(),
             src: z.string().url(),
             title: z.string()
+        })).optional(),
+        credits: z.array(z.object({
+            name: z.string(),
+            link: z.string().url().optional(),
+            skills: z.string(),
+            avatar: z.string()
         })).optional()
     })
 })

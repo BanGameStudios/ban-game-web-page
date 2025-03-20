@@ -9,6 +9,7 @@ import MainPage from '../../components/MainPage.astro';
 import Prev from '../../components/Icons/Prev.astro';
 import Next from '../../components/Icons/Next.astro';
 import { YouTube } from '@astro-community/astro-embed-youtube';
+import CreditsCard from '../../components/CreditsCard.astro';
 
 export async function getStaticPaths() {
     const proyectos = await getCollection('proyectos');
@@ -28,6 +29,7 @@ const { Content } = await render(proyecto)
 const { default: image } = await import(`../../assets/projects/${slug}.webp`)
 
 const videos = gallery ? gallery.filter((item: { type: string; }) => item.type === "video") : [];
+const credits = data.credits || [];
 ---
 
 <Layout title={title} desc={desc} image={`/projects/${slug}.webp`}>
@@ -64,6 +66,12 @@ const videos = gallery ? gallery.filter((item: { type: string; }) => item.type =
             </>
         )}
 
+        {credits.length > 0 && (
+            <>
+                <MiniTitle class="mt-5 mb-5">Creditos</MiniTitle>
+                <CreditsCard profiles={credits}/>
+            </>
+        )}
         
     </MainPage>
 </Layout>
