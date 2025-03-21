@@ -78,7 +78,7 @@ export const soporte = [
         avatar: "salmon"
     },
     {
-        name: "vH Alex",
+        name: "Alex VYROX",
         link: "https://x.com/vHAleX211",
         skills: "Ayudante",
         avatar: "alex"
