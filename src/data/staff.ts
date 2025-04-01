@@ -21,22 +21,10 @@ export const activos = [
         avatar: "katto"
     },
     {
-        name: "Kozurat", 
+        name: "Kozu", 
         link: "https://x.com/Kozurat",
-        skills: "Diseñador 2D y 3D",
+        skills: "Sub Director, Diseñador 2D y 3D",
         avatar: "kozu"
-    },
-    {
-        name: "Sir",
-        link: "https://x.com/Sir4565",
-        skills: "Constructor",
-        avatar: "sir"
-    },
-    {
-        name: "T.G.B",
-        link: "https://https://x.com/TGB134563",
-        skills: "Ayudante",
-        avatar: "tgb"
     },
     {
         name: "Dizzy", 
@@ -45,16 +33,28 @@ export const activos = [
         avatar: "juanxd"
     },
     {
-        name: "Wasagen", 
-        link: "https://x.com/pequewasa",
-        skills: "Guionista, Ayudante",
-        avatar: "wasa"
+        name: "Sir",
+        link: "https://x.com/Sir4565",
+        skills: "Constructor",
+        avatar: "sir"
+    },
+    {
+        name: "Alex VYROX",
+        link: "https://x.com/vHAleX211",
+        skills: "Ayudante",
+        avatar: "alex"
     },
     {
         name: "Fitz",
         link: "https://x.com/fitzxel",
         skills: "Programador",
         avatar: "fitz"
+    },
+    {
+        name: "Wasagen", 
+        link: "https://x.com/pequewasa",
+        skills: "Guionista, Ayudante",
+        avatar: "wasa"
     },
 ];
 
@@ -78,9 +78,8 @@ export const soporte = [
         avatar: "salmon"
     },
     {
-        name: "Alex VYROX",
-        link: "https://x.com/vHAleX211",
+        name: "T.G.B",
         skills: "Ayudante",
-        avatar: "alex"
+        avatar: "tgb"
     },
 ];
