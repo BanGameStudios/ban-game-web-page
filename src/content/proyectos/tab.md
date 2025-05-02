@@ -3,7 +3,7 @@ title: 👁 ...OMꙄIᙠA
 type: Serie
 date: "2025"
 desc: Proximamente...
-order: 6
+order: 7
 
 gallery:
 - type: video

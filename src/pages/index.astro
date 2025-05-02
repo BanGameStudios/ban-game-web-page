@@ -7,67 +7,7 @@ import MiniTitle from '../components/MiniTitle.astro';
 import Next from '../components/Icons/Next.astro';
 import Prev from '../components/Icons/Prev.astro';
 import YTVideo from '../components/YTVideo.astro';
-
-const videos = [
-    {
-        src: "BcpE8pbG9Nk",
-        title: "TRAILER OFICIAL DE #RandomSMP 🚬 | BanGameStudios"
-    },
-    {
-        src: "-7gS_myLcRU",
-        title: "Cinematica Inicial de RandomSMP | BanGameStudios"
-    },
-    {
-        src: "EORvdnrSQYk",
-        title: "Teaser de nuestra próxima serie | BanGameStudios"
-    },
-    {
-        src: "rFUqIviVQnY",
-        title: "Trailer de presentación de Un UHC Más 2 | BanGameStudios"
-    },
-    {
-        src: "yx0pfm-BAB0",
-        title: "Créditos de Un UHC Más 2 | BanGameStudios"
-    }
-]
-
-const timeline = [
-    {
-        date: "2025/2026",
-        title: "??? 2",
-        desc: "???."
-    },
-    {
-        date: "2025",
-        title: "T-- S---- M------",
-        desc: "???."
-    },
-    {
-        date: "2025",
-        title: "???",
-        desc: "???."
-    },
-    {
-        date: "2025",
-        title: "T-- A---- B----",
-        desc: "???."
-    },
-    {
-        date: "2025",
-        title: "🌻",
-        desc: "???."
-    },
-    {
-        date: "Abril 2025",
-        title: "TTT",
-        desc: "Evento inspirado en el modo de juego TTT (Trouble in Terrorist Town) de Garry's Mod."
-    },
-    {
-        date: "Marzo 2025",
-        title: "Un UHC Más 2",
-        desc: "Evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones."
-    }
-]
+import { videos, timeline } from '../data/index';
 ---
 
 <Layout title="Ban Game Studios" image="/pages/index.webp" desc="Estudio de desarrollo de servidores (eventos o series) de Minecraft Semi-profesionales.">

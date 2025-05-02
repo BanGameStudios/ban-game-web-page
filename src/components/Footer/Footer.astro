@@ -1,42 +1,7 @@
 ---
 import Networks from "./Networks.astro"
 import Column from "./Column.astro"
-
-const COMPANY = [
-    {
-        name: "Sobre Nosotros",
-        url: "/nosotros/"
-    },
-    {
-        name: "Contacto",
-        url: "/contacto/"
-    },
-    {
-        name: "Series",
-        url: "https://x.com/BanGameSeries",
-        blank: true
-    },
-    {
-        name: "Sponsor",
-        url: "https://godlike.host/?aff_id=1198",
-        blank: true
-    }
-]
-
-const COMMUNITY = [
-    {
-        name: "Discord",
-        url: "https://discord.gg/sKRYYyVCnw",
-        blank: true
-    }
-]
-
-const LEGAL = [
-    {
-        name: "Terminos y Condiciones",
-        url: "/terminos/"
-    }
-]
+import { COMPANY, COMMUNITY, LEGAL } from "../../data/footer"
 ---
 <footer class="bg-[#1c1c1c] mt-auto">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
