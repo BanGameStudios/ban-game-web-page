@@ -1,8 +1,5 @@
 ---
 import { Image } from "astro:assets"
-import BannerLogo from '../assets/banner_logo.webp'
-
-const currentPath = Astro.url.pathname;
 
 const { src } = Astro.props
 
@@ -10,9 +7,6 @@ const { default: image } = await import(`../assets/banners/${src}.webp`)
 ---
 
 <div class="opacity-0 transition-opacity duration-1000 ease-in-out overflow-hidden">
-    {currentPath === "/staff/" ? (
-        <Image src={BannerLogo} alt="Banner Logo" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full p-20 max-w-[800px]" onload="this.parentElement.classList.add('animate-fade-up')"/>
-    ) : null}
     <Image src={image} alt="Banner" loading="eager" class="w-full" onload="this.parentElement.classList.add('animate-fade-up')"/>
 </div>
 

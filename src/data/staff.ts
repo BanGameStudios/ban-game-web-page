@@ -3,13 +3,13 @@ export const afiliados = [
         name: "Minemu",
         link: "https://minemu.es/",
         skills: "Host (Servidor)",
-        avatar: "minemu"
+        avatar: "https://unavatar.io/x/MinemuNetwork"
     },
     {
         name: "Crysis Studios", 
         link: "https://crysistudio.xyz/",
         skills: "Desarrollo (Ocasionalmente)",
-        avatar: "crysis"
+        avatar: "https://unavatar.io/x/CrysisStudio"
     },
 ];
 
@@ -18,13 +18,13 @@ export const activos = [
         name: "Katto", 
         link: "https://linktr.ee/katto1",
         skills: "Director, Programador",
-        avatar: "katto"
+        avatar: "https://unavatar.io/x/SoyKatto1"
     },
     {
         name: "Kozu", 
         link: "https://x.com/Kozurat",
         skills: "Sub Director, Diseñador 2D y 3D",
-        avatar: "kozu"
+        avatar: "https://unavatar.io/x/Kozurat"
     },
     {
         name: "Dizzy", 
@@ -42,7 +42,7 @@ export const activos = [
         name: "Alex VYROX",
         link: "https://x.com/vHAleX211",
         skills: "Ayudante",
-        avatar: "alex"
+        avatar: "https://unavatar.io/x/vHAleX211"
     },
     {
         name: "Fitz",
@@ -52,9 +52,9 @@ export const activos = [
     },
     {
         name: "Wasagen", 
-        link: "https://x.com/pequewasa",
+        link: "https://x.com/whoiswasa",
         skills: "Guionista, Ayudante",
-        avatar: "wasa"
+        avatar: "https://unavatar.io/x/whoiswasa"
     },
 ];
 

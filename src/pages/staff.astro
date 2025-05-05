@@ -1,7 +1,6 @@
 ---
 import StaffCard from '../components/StaffCard.astro';
 import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
 import Banner from '../components/Banner.astro';
 
 import { afiliados } from '../data/staff';
@@ -15,7 +14,7 @@ import Desc from '../components/Desc.astro';
 
 <Layout title="Staff" image="/pages/staff.webp" desc="Equipo de Ban Game Studios.">
     <Banner src="banner3"/>
-    <MainPage class="mb-[35px]">
+    <MainPage class="mb-8">
       <MiniTitle class="mb-[20px]">¿Quieres formar parte del equipo de Ban Game Studios?</MiniTitle>
       <a class="flex flex-row items-center gap-2 px-5 py-3 bg-[#333] rounded-[20px] text-white transition-all duration-300 ease-in hover:bg-[#222222]" href="/postulate/">
         <BriefCase class="w-8 h-8"/>

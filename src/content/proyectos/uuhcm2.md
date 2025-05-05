@@ -3,24 +3,26 @@ title: Un UHC Más 2
 type: Evento
 date: 2025/03
 desc: Un UHC Más 2 es la segunda edición de un evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones.
+banner: true
 order: 4
 
 credits:
 - name: "Minemu"
   link: "https://minemu.es/"
   skills: "Host (Servidor)"
-  avatar: "minemu"
+  avatar: "https://unavatar.io/x/MinemuNetwork"
 - name: "Katto"
   link: "https://linktr.ee/katto1"
   skills: "Dirección, Programación, Administración"
-  avatar: "katto"
+  avatar: "https://unavatar.io/x/SoyKatto1"
 - name: "Kozurat"
+  link: "https://x.com/Kozurat"
   skills: "Diseño 2D"
-  avatar: "kozu"
+  avatar: "https://unavatar.io/x/Kozurat"
 - name: "Anthony"
   link: "https://x.com/anthony_lol12"
   skills: "Construcción"
-  avatar: "anthony"
+  avatar: "https://unavatar.io/x/anthony_lol12"
 - name: "Sir"
   link: "https://x.com/Sir4565"
   skills: "Moderación"

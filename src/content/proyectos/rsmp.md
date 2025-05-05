@@ -3,17 +3,18 @@ title: RandomSMP
 type: Serie
 date: 2024/01
 desc: RandomSMP es una serie semi-roleplay con más de 100 mods que duró un mes, basada en el PvE y dungeons.
+banner: true
 order: 1
 
 credits:
 - name: "Crysis Studios"
   link: "https://crysistudio.xyz/"
   skills: "Construcción, Diseño"
-  avatar: "crysis"
+  avatar: "https://unavatar.io/x/CrysisStudio"
 - name: "Katto"
   link: "https://linktr.ee/katto1"
   skills: "Dirección, Programación, Administración"
-  avatar: "katto"
+  avatar: "https://unavatar.io/x/SoyKatto1"
 - name: "FranNazurRM"
   skills: "Ayudante, Administración"
   avatar: "no"

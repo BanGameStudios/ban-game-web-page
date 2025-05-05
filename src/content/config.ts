@@ -6,6 +6,7 @@ const proyectos = defineCollection({
         type: z.string(),
         date: z.string(),
         desc: z.string(),
+        banner: z.boolean(),
         order: z.number(),
         gallery: z.array(z.object({
             type: z.string(),
