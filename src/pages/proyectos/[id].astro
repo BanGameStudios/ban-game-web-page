@@ -32,7 +32,7 @@ const videos = gallery ? gallery.filter((item: { type: string; }) => item.type =
 const credits = data.credits || [];
 ---
 
-<Layout title={title} desc={desc} image={`/projects/${slug}.webp`}>
+<Layout title={title} desc={desc}>
     {banner && <Banner src={slug}/>}
     <MainPage class="mb-6">
         {!banner && <section class="flex flex-col justify-center items-center">
