@@ -3,9 +3,8 @@ import StaffCard from '../components/StaffCard.astro';
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 
-import { afiliados } from '../data/staff';
-import { activos } from '../data/staff';
-import { soporte } from '../data/staff';
+import { afiliados, activos, soporte, tgb } from '../data/staff';
+
 import MainPage from '../components/MainPage.astro';
 import BriefCase from '../components/Icons/BriefCase.astro';
 import MiniTitle from '../components/MiniTitle.astro';
@@ -31,5 +30,8 @@ import Desc from '../components/Desc.astro';
 
       <MiniTitle class="mt-[40px] mb-[20px]">Staff de Soporte</MiniTitle>
       <StaffCard profiles={soporte}/>
+
+      <MiniTitle class="mt-[40px] mb-[20px]">La Mascota</MiniTitle>
+      <StaffCard profiles={tgb}/>
     </MainPage>
 </Layout>

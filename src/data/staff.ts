@@ -27,10 +27,10 @@ export const activos = [
         avatar: "https://unavatar.io/x/Kozurat"
     },
     {
-        name: "Dizzy", 
-        link: "https://x.com/JuanXDC4D",
-        skills: "Diseñador 3D, Compositor",
-        avatar: "juanxd"
+        name: "Salmon",
+        link: "https://linktr.ee/sannsalmon",
+        skills: "Director Auxliar, Compositor",
+        avatar: "salmon"
     },
     {
         name: "Sir",
@@ -45,10 +45,31 @@ export const activos = [
         avatar: "https://unavatar.io/x/vHAleX211"
     },
     {
+        name: "Dizzy", 
+        link: "https://x.com/JuanXDC4D",
+        skills: "Diseñador 3D, Compositor",
+        avatar: "juanxd"
+    },
+    {
         name: "Fitz",
         link: "https://x.com/fitzxel",
         skills: "Programador",
         avatar: "fitz"
+    },
+];
+
+export const soporte = [
+    {
+        name: "Wachu Entity", 
+        link: "https://wachustudio.myportfolio.com/",
+        skills: "Productor Audiovisual",
+        avatar: "https://unavatar.io/x/WachuEntity"
+    },
+    {
+        name: "YoTambre", 
+        link: "https://x.com/yotambre",
+        skills: "Productor Audiovisual",
+        avatar: "https://unavatar.io/x/yotambre"
     },
     {
         name: "Wasagen", 
@@ -56,9 +77,6 @@ export const activos = [
         skills: "Guionista, Ayudante",
         avatar: "https://unavatar.io/x/whoiswasa"
     },
-];
-
-export const soporte = [
     {
         name: "Hister",
         link: "https://x.com/histerjax",
@@ -72,14 +90,23 @@ export const soporte = [
         avatar: "srm"
     },
     {
-        name: "Salmon",
-        link: "https://linktr.ee/sannsalmon",
-        skills: "Compositor",
-        avatar: "salmon"
+        name: "CrawKatt",
+        link: "https://crawkatt.dev/",
+        skills: "Programador",
+        avatar: "https://unavatar.io/x/CrawKatt"
     },
     {
+        name: "Drift", 
+        link: "https://linktr.ee/drift007_",
+        skills: "Diseñador 2D",
+        avatar: "https://unavatar.io/x/Drift007_"
+    },
+];
+
+export const tgb = [
+    {
         name: "T.G.B",
-        skills: "Ayudante",
+        skills: "Existir",
         avatar: "tgb"
     },
 ];
