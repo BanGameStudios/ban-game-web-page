@@ -1,10 +1,5 @@
 export const timeline = [
     {
-        date: "2025/2026",
-        title: "??? 2",
-        desc: "???."
-    },
-    {
         date: "2025",
         title: "???",
         desc: "???."
@@ -16,13 +11,23 @@ export const timeline = [
     },
     {
         date: "2025",
-        title: "T-- A---- B----",
+        title: "???",
         desc: "???."
     },
     {
         date: "2025",
-        title: "🌻",
-        desc: "Ban Game x Crysis"
+        title: "T-- A---- B----",
+        desc: "???."
+    },
+    {
+        date: "Junio 2025",
+        title: "Campo de Guerra",
+        desc: "Evento, en colaboración con SonPancho y Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower."
+    },
+    {
+        date: "Mayo 2025",
+        title: "Flower Power",
+        desc: "Evento, en colaboración con Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower."
     },
     {
         date: "Abril 2025",
