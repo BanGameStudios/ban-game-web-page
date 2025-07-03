@@ -1,4 +1,5 @@
 ---
+import Desc from "../components/Desc.astro";
 import MainPage from "../components/MainPage.astro";
 import Title from "../components/Title.astro";
 import { redirects } from "../data/redirects";
@@ -16,8 +17,8 @@ const { id, url, title, desc } = redirect
 ---
 
 <Layout title={title} desc={desc} redirect={url}>
-    <MainPage class="h-[600px]">
+    <MainPage class="h-[calc(100vh-125px)]">
         <Title>Redirigiendo...</Title>
-        <p class="mt-[10px] text-[1rem] text-[darkgrey] max-w-[600px]">Redirigiendo, por favor espere...</p>
+        <Desc class="mt-2.5">Redirigiendo, por favor espere...</Desc>
     </MainPage>
 </Layout>

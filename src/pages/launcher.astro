@@ -10,40 +10,12 @@ import Desc from "../components/Desc.astro"
 const soon = false;
 ---
 
-<Layout title="Launcher" desc="Launcher oficial de Ban Game Studios para unirte a nuestros eventos y series.">
-    {soon ? (
-        <MainPage class="h-[600px]">
-            <Title>Ban Game Launcher</Title>
-            <p class="mt-[10px] text-[1rem] text-[darkgrey] max-w-[600px]">Próximamente...</p>
-        </MainPage>
-    ) : (
-        <MainPage class="mb-8 mt-8">
-            <Title>Ban Game Launcher</Title>
-            <Desc class="mt-2">Nuestro launcher para poder obtener los recursos necesarios para participar en nuestros proyectos.</Desc>
-            <Desc class="mt-3"><b>¡AVISO!</b> El launcher está en una versión BETA, por lo que algunas funciones estan deshabilitadas. Si tienes algún problema puedes reportarlo en un ticket en nuestro <a href="https://discord.gg/sKRYYyVCnw" target="_blank" class="text-white hover:text-[oklch(0.872_0.01_258.338)] transition-colors ease duration-300">discord</a>.</Desc>
-            <DownloadButton/>
-            <Image src={launcher} alt="Launcher" loading="eager" quality="high" class="w-[90%] h-[90%] max-w-[900px] rounded-[10px] object-cover drop-shadow-[0_0_20px_rgba(42,42,42,0.250)] border-[1.5px] border-[#ffffff3e] mt-7" onload="this.parentElement.classList.add('animate-fade-up')"/>
-        </MainPage>
-    )}
+<Layout title="Launcher" image="/pages/launcher.webp" desc="Launcher oficial de Ban Game Studios para unirte a nuestros eventos y series.">
+    <MainPage class="mt-15">
+        <Title>Ban Game Launcher</Title>
+        <Desc class="mt-2">Nuestro launcher para poder obtener los recursos necesarios para participar en nuestros proyectos.</Desc>
+        <Desc class="mt-3"><b>¡AVISO!</b> El launcher está en una versión BETA, por lo que algunas funciones estan deshabilitadas. Si tienes algún problema puedes reportarlo en un ticket en nuestro <a href="https://discord.gg/sKRYYyVCnw" target="_blank" class="text-white hover:text-[oklch(0.872_0.01_258.338)] transition-colors ease duration-300">discord</a>.</Desc>
+        <DownloadButton/>
+        <Image src={launcher} alt="Launcher" loading="eager" quality="high" class="w-[90%] h-[90%] max-w-[900px] rounded-[10px] object-cover drop-shadow-[0_0_20px_rgba(42,42,42,0.250)] border-[1.5px] border-[#ffffff3e] mt-7"/>
+    </MainPage>
 </Layout>
-
-<style>
-    .animate-fade-up {
-        opacity: 1;
-    }
-
-    @keyframes fadeUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-fade-up {
-        animation: fadeUp 1s ease-out forwards;
-    }
-</style>

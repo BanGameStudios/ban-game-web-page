@@ -1,7 +1,7 @@
 ---
 title: Un UHC Más
 type: Evento
-date: 2024/06
+date: 7 jun 2025
 desc: Un UHC Más es un evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones.
 banner: true
 order: 2

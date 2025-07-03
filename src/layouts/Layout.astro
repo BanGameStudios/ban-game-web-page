@@ -53,9 +53,7 @@ import "../styles/global.css";
 		<ClientRouter/>
 	</head>
 	<body>
-		<div class="pb-[55px]">
-			<Header />
-		</div>
+		<Header />
 		<slot />
 		<Footer />
 	</body>
@@ -66,6 +64,7 @@ import "../styles/global.css";
 
 	html {
 		scrollbar-color: #262626 transparent !important;
+		scroll-behavior: smooth;
 	}
 
 	body {

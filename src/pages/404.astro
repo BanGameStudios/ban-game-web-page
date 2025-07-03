@@ -1,13 +1,16 @@
 ---
+import Desc from "../components/Desc.astro";
 import MainPage from "../components/MainPage.astro";
+import MiniTitle from "../components/MiniTitle.astro";
+import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="404" desc="Pagina no encontrada.">
-    <MainPage class="h-[600px]">
-        <h1 class="text-[44px] font-bold pl-5 pr-5">404</h1>
-        <p class="text-[32px] font-bold mb-[10px] pl-5 pr-5">Pagina no encontrada</p>
-        <p class="text-[16px] text-[darkgrey] pl-5 pr-5">Parece que te has perdido. Volver a <a class="text-white transition-colors duration-300 ease-in hover:text-[darkgrey]" href="/">inicio</a>.</p>
+    <MainPage class="h-[calc(100vh-125px)]">
+        <Title>404</Title>
+        <MiniTitle class="mb-2.5">Pagina no encontrada</MiniTitle>
+        <Desc>Parece que te has perdido. Volver a <a class="text-white transition-colors duration-300 ease hover:text-[#ccc]" href="/">inicio</a>.</Desc>
     </MainPage>
 </Layout>
 

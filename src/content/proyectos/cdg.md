@@ -1,7 +1,7 @@
 ---
 title: Campo de Guerra
 type: Evento
-date: "2025/06"
+date: "21 jun 2025"
 desc: Campo de Guerra es un evento inspirado en la famosa modalidad conocida como UHC Item Flower.
 banner: true
 order: 7
@@ -51,6 +51,11 @@ credits:
   link: "https://x.com/The_Purguist"
   skills: "Moderación"
   avatar: "https://unavatar.io/x/The_Purguist"
+
+gallery:
+- type: video
+  src: https://www.youtube.com/watch?v=p6dksY67fNs
+  title: 'Campo de Guerra 🥀 | Evento colaboración con @CrysisStudio y @SonPanchoUwU'
 ---
 Campo de Guerra es un evento, en colaboración con SonPancho y Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower, la cual consiste en que al romper flores estas te pueden dar objetos aleatorios utiles para el combate. En donde 80 personas, solas y en equipos, tuvieron que equiparse y combatir para ver cual es el mejor en 3 partidas.
 

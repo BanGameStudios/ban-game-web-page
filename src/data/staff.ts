@@ -1,19 +1,4 @@
-export const afiliados = [
-    {
-        name: "Minemu",
-        link: "https://minemu.es/",
-        skills: "Host (Servidor)",
-        avatar: "https://unavatar.io/x/MinemuNetwork"
-    },
-    {
-        name: "Crysis Studios", 
-        link: "https://crysistudio.xyz/",
-        skills: "Desarrollo (Ocasionalmente)",
-        avatar: "https://unavatar.io/x/CrysisStudio"
-    },
-];
-
-export const activos = [
+export const staff = [
     {
         name: "Katto", 
         link: "https://linktr.ee/katto1",
@@ -21,7 +6,7 @@ export const activos = [
         avatar: "https://unavatar.io/x/SoyKatto1"
     },
     {
-        name: "Kozu", 
+        name: "Kozurat", 
         link: "https://x.com/Kozurat",
         skills: "Sub Director, Diseñador 2D y 3D",
         avatar: "https://unavatar.io/x/Kozurat"
@@ -37,6 +22,12 @@ export const activos = [
         link: "https://x.com/Sir4565",
         skills: "Constructor",
         avatar: "sir"
+    },
+    {
+        name: "Wasagen", 
+        link: "https://x.com/whoiswasa",
+        skills: "Guionista, Ayudante",
+        avatar: "https://unavatar.io/x/whoiswasa"
     },
     {
         name: "Alex VYROX",
@@ -56,9 +47,6 @@ export const activos = [
         skills: "Programador",
         avatar: "fitz"
     },
-];
-
-export const soporte = [
     {
         name: "Wachu Entity", 
         link: "https://wachustudio.myportfolio.com/",
@@ -70,12 +58,6 @@ export const soporte = [
         link: "https://x.com/yotambre",
         skills: "Productor Audiovisual",
         avatar: "https://unavatar.io/x/yotambre"
-    },
-    {
-        name: "Wasagen", 
-        link: "https://x.com/whoiswasa",
-        skills: "Guionista, Ayudante",
-        avatar: "https://unavatar.io/x/whoiswasa"
     },
     {
         name: "Hister",
@@ -94,12 +76,6 @@ export const soporte = [
         link: "https://crawkatt.dev/",
         skills: "Programador",
         avatar: "https://unavatar.io/x/CrawKatt"
-    },
-    {
-        name: "Drift", 
-        link: "https://linktr.ee/drift007_",
-        skills: "Diseñador 2D",
-        avatar: "https://unavatar.io/x/Drift007_"
     },
 ];
 

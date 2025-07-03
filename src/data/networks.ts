@@ -14,7 +14,7 @@ export const networks = [
     },
     {
         alt: 'Patreon',
-        href: 'https://patreon.com/BanGameStudios',
+        href: 'https://patreon.com/c/BanGameStudios',
         icon: Patreon
     },
     {

@@ -61,5 +61,30 @@ export const videos = [
     {
         src: "yx0pfm-BAB0",
         title: "Créditos de Un UHC Más 2 | BanGameStudios"
+    },
+    {
+        src: "p6dksY67fNs",
+        title: "Campo de Guerra 🥀 | Evento colaboración con @CrysisStudio y @SonPanchoUwU"
     }
+]
+
+export const proyectos = [
+    {
+        slug: "fp",
+        title: "Flower Power",
+        type: "Evento",
+        date: "31 may 2025"
+    },
+    {
+        slug: "ttt",
+        title: "TTT",
+        type: "Evento",
+        date: "6 abr 2025"
+    },
+    {
+        slug: "uuhcm2",
+        title: "Un UHC Más 2",
+        type: "Evento",
+        date: "7 mar 2025"
+    },
 ]

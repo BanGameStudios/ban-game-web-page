@@ -1,7 +1,7 @@
 ---
 title: Un UHC Más 2
 type: Evento
-date: 2025/03
+date: 7 mar 2025
 desc: Un UHC Más 2 es la segunda edición de un evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones.
 banner: true
 order: 4

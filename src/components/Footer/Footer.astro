@@ -2,6 +2,11 @@
 import Networks from "./Networks.astro"
 import Column from "./Column.astro"
 import { COMPANY, COMMUNITY, LEGAL } from "../../data/footer"
+import { Image } from "astro:assets"
+import Title from "./Title.astro"
+
+const { default: minemu } = await import(`../../assets/minemu.webp`)
+const { default: crysis } = await import(`../../assets/crysis.webp`)
 ---
 <footer class="bg-[#1c1c1c] mt-auto">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -10,6 +15,25 @@ import { COMPANY, COMMUNITY, LEGAL } from "../../data/footer"
                 <a href="/" class="flex items-center">
                     <span class="self-center text-2xl font-semibold whitespace-nowrap text-white hover:text-[#ccc] transition-colors duration-300 ease">BAN GAME STUDIOS</span>
                 </a>
+                <div class="mt-4">
+                    <Title>AFILIADOS</Title>
+                    <div class="flex flex-row gap-5">
+                        <a href="https://minemu.es/" target="_blank" class="flex flex-row items-center gap-2.5 hover:underline">
+                            <Image src={minemu} alt={"title"} quality="high" class="w-10 h-10" />
+                            <div class="flex flex-col">
+                                <span>Minemu</span>
+                                <span>(Hosting)</span>
+                            </div>
+                        </a>
+                        <a href="https://crysistudio.xyz/" target="_blank" class="flex flex-row items-center gap-2.5 hover:underline">
+                            <Image src={crysis} alt={"title"} quality="high" class="w-10 h-10" />
+                            <div class="flex flex-col">
+                                <span>Crysis</span>
+                                <span>Studios</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
             
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -21,7 +45,7 @@ import { COMPANY, COMMUNITY, LEGAL } from "../../data/footer"
 
         <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-base sm:text-center text-gray-400">© 2025 <a class="text-white hover:text-[#ccc] transition-colors duration-300 ease" href="/">Ban Game Studios</a>.</span>
+            <span class="text-[15px] sm:text-center text-gray-400">© 2025 <a class="text-white hover:text-[#ccc] transition-colors duration-300 ease" href="/">Ban Game Studios</a>.</span>
             <Networks/>
         </div>
     </div>

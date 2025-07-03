@@ -5,13 +5,21 @@ import Title from '../../components/Title.astro';
 import Banner from '../../components/Banner.astro';
 import MainPage from '../../components/MainPage.astro';
 import Desc from '../../components/Desc.astro';
+import { getCollection, render } from "astro:content";
+
+const info = await getCollection('info')
+const projects = info.find((projects) => projects.slug == "projects")
+
+const { Content } = await render(projects)
 ---
 
 <Layout title="Proyectos" image="/pages/proyectos.webp" desc="Proyectos (eventos y series) que hemos realizado.">
     <Banner src="banner2"/>
-    <MainPage class="mb-8">
-        <Title class="mb-2">Proyectos</Title>
-        <Desc>Los proyectos que hemos realizado a lo largo del tiempo desde nuestra fundación.</Desc>
+    <MainPage>
+        <Title class="mb-2">Nuestros Proyectos</Title>
+        <div class="px-4 max-w-[900px] prose prose-invert text-left">
+            <Content/>
+        </div>
         <div class="mt-6">
             <ProjectCard/>
         </div>

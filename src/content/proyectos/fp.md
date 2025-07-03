@@ -1,7 +1,7 @@
 ---
 title: Flower Power
 type: Evento
-date: "2025/05"
+date: "31 may 2025"
 desc: Flower Power es un evento, en colaboración con Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower.
 banner: true
 order: 6

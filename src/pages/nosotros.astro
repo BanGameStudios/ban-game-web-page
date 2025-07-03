@@ -4,6 +4,7 @@ import Banner from "../components/Banner.astro";
 import MainPage from "../components/MainPage.astro";
 import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 
 const info = await getCollection('info')
 const about = info.find((about) => about.slug == "about")
@@ -11,14 +12,12 @@ const about = info.find((about) => about.slug == "about")
 const { Content } = await render(about)
 ---
 
-<Layout title="Sobre Nosotros" desc="Información e historia de Ban Game Studios.">
-    <Banner src="banner4"/>
-    <MainPage class="mb-8">
-        <section id="about" class="flex flex-col justify-center items-center">
-            <Title>Sobre Nosotros</Title>
-            <div class="px-4 mt-4 max-w-[800px] prose prose-invert text-left">
-                <Content/>
-            </div>
-        </section>
+<Layout title="Sobre Nosotros" image="/pages/index.webp" desc="Información e historia de Ban Game Studios.">
+    <Hero class="h-[calc(100vh-450px)]" />
+    <MainPage>
+        <Title>Sobre Nosotros</Title>
+        <div class="px-4 mt-4 max-w-[900px] prose prose-invert text-left">
+            <Content/>
+        </div>
     </MainPage>
 </Layout>
