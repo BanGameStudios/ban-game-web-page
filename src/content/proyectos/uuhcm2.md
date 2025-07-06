@@ -39,6 +39,11 @@ gallery:
 - type: video
   src: https://www.youtube.com/watch?v=yx0pfm-BAB0
   title: 'Créditos de Un UHC Más 2 | BanGameStudios'
+
+tweets:
+- src: https://x.com/BanGameStudios/status/1890867218885325106
+- src: https://x.com/BanGameStudios/status/1896244111981900169
+- src: https://x.com/BanGameStudios/status/1898188204328493338
 ---
 Un UHC Más 2 es la segunda edición de un evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones, en donde 12 equipos de 4 personas tuvieron que combatir para ver cual es el mejor y llevarse el premio de 100 BITS.
 

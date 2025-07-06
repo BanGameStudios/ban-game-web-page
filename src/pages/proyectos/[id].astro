@@ -11,6 +11,8 @@ import Next from '../../components/Icons/Next.astro';
 import Banner from '../../components/Banner.astro';
 import StaffCard from '../../components/StaffCard.astro';
 import Desc from '../../components/Desc.astro';
+import { Tweet } from '@astro-community/astro-embed-twitter';
+import TweetEmbed from '../../components/TweetEmbed.astro';
 
 export async function getStaticPaths() {
     const proyectos = await getCollection('proyectos');
@@ -23,13 +25,16 @@ export async function getStaticPaths() {
 
 const { proyecto } = Astro.props
 const { slug, data } = proyecto
-const { title, type, date, desc, gallery, banner } = data
+const { title, type, date, desc, banner } = data
 
 const { Content } = await render(proyecto)
 
 const { default: image } = await import(`../../assets/projects/${slug}.webp`)
 
+const gallery = data.gallery || [];
 const videos = gallery ? gallery.filter((item: { type: string; }) => item.type === "video") : [];
+const images = gallery ? gallery.filter((item: { type: string; }) => item.type === "image") : [];
+const tweets = data.tweets || [];
 const credits = data.credits || [];
 ---
 
@@ -47,7 +52,7 @@ const credits = data.credits || [];
             <Content/>
         </div>
 
-        {videos.length > 0 && (
+        {gallery.length > 0 && (
             <>
                 <MiniTitle class="mt-5">Galeria</MiniTitle>
                 <div class="w-[calc(100vw-20px)] pr-2.5 pl-2.5 max-w-[800px] mt-5 mb-5 overflow-hidden">
@@ -57,6 +62,13 @@ const credits = data.credits || [];
                                 <div class="w-[370px] snap-start shrink-0 overflow-hidden">
                                     <YTVideo url={video.src} title={video.title}/>
                                 </div>
+                            ))
+                        }
+                        {
+                            images.map((image) => (
+                                <a href={image.link} title={image.title} target="_blank" class="w-[370px] snap-start shrink-0 overflow-hidden rounded-[10px] drop-shadow-[0_0_20px_rgba(42,42,42,0.250)] border-[1px] border-[#ffffff3e]">
+                                    <img src={image.src} class="object-cover w-full transition duration-500 ease hover:scale-[1.1] aspect-[16/9]" />
+                                </a>
                             ))
                         }
                     </div>
@@ -75,7 +87,12 @@ const credits = data.credits || [];
                 <StaffCard profiles={credits}/>
             </>
         )}
-        
+
+        {tweets.length > 0 && (
+            <>
+                <TweetEmbed profiles={tweets} />
+            </>
+        )}
     </MainPage>
 </Layout>
 

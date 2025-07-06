@@ -47,6 +47,11 @@ credits:
   link: "https://linktr.ee/sannsalmon"
   skills: "Moderación"
   avatar: "salmon"
+
+tweets:
+- src: https://x.com/BanGameStudios/status/1923780551955386456
+- src: https://x.com/CrysisStudio/status/1925972464376435052
+- src: https://x.com/CrysisStudio/status/1928551593160388698
 ---
 Flower Power es un evento, en colaboración con Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower, la cual consiste en que al romper flores estas te pueden dar objetos aleatorios utiles para el combate. En donde 50 personas tuvieron que equiparse y combatir para ver cual es el mejor en 3 partidas.
 

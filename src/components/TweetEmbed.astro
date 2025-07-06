@@ -1,0 +1,20 @@
+---
+import { Tweet } from "astro-embed";
+
+export interface Profile {
+  src: string;
+}
+
+const { profiles } = Astro.props;
+---
+
+<div class="flex flex-wrap justify-center gap-x-5 max-w-[1200px] mx-5 mt-5">
+    {
+      profiles.map((profile: any) => (
+        <article class="w-[90%] max-w-[360px]">
+          <script async src="https://platform.twitter.com/widgets.js"></script>
+          <Tweet theme="dark" id={profile.src} />
+        </article>
+      ))
+    }
+</div>

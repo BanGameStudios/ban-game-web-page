@@ -29,6 +29,11 @@ credits:
 - name: "T.G.B"
   skills: "Moderación"
   avatar: "tgb"
+
+tweets:
+- src: https://x.com/BanGameStudios/status/1792259274858528819
+- src: https://x.com/BanGameStudios/status/1795958824529965559
+- src: https://x.com/BanGameStudios/status/1796948471544480133
 ---
 Un UHC Más es un evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones, en donde 10 equipos de 4 personas tuvieron que combatir para ver cual es el mejor y llevarse el premio de 100 BITS.
 

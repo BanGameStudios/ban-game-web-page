@@ -56,6 +56,10 @@ gallery:
 - type: video
   src: https://www.youtube.com/watch?v=p6dksY67fNs
   title: 'Campo de Guerra 🥀 | Evento colaboración con @CrysisStudio y @SonPanchoUwU'
+
+tweets:
+- src: https://x.com/BanGameStudios/status/1935442993420374468
+- src: https://x.com/CrysisStudio/status/1936476112474739023
 ---
 Campo de Guerra es un evento, en colaboración con SonPancho y Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower, la cual consiste en que al romper flores estas te pueden dar objetos aleatorios utiles para el combate. En donde 80 personas, solas y en equipos, tuvieron que equiparse y combatir para ver cual es el mejor en 3 partidas.
 
