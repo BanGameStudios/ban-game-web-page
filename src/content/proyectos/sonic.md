@@ -4,7 +4,7 @@ type: Evento
 date: "2025"
 desc: Proximamente...
 banner: true
-order: 9
+order: 11
 
 credits:
 - name: "The VYROX Project"

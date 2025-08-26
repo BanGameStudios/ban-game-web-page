@@ -4,7 +4,7 @@ type: Serie
 date: "2025"
 desc: Proximamente...
 banner: false
-order: 8
+order: 10
 
 gallery:
 - type: video

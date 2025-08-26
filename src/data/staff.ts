@@ -3,13 +3,13 @@ export const staff = [
         name: "Katto", 
         link: "https://linktr.ee/katto1",
         skills: "Director, Programador",
-        avatar: "https://unavatar.io/x/SoyKatto1"
+        avatar: "katto"
     },
     {
         name: "Kozurat", 
         link: "https://x.com/Kozurat",
         skills: "Sub Director, Diseñador 2D y 3D",
-        avatar: "https://unavatar.io/x/Kozurat"
+        avatar: "kozu"
     },
     {
         name: "Salmon",
@@ -27,19 +27,19 @@ export const staff = [
         name: "Wasagen", 
         link: "https://x.com/whoiswasa",
         skills: "Guionista, Ayudante",
-        avatar: "https://unavatar.io/x/whoiswasa"
+        avatar: "wasa"
     },
     {
         name: "Alex VYROX",
         link: "https://x.com/vHAleX211",
         skills: "Ayudante",
-        avatar: "https://unavatar.io/x/vHAleX211"
+        avatar: "alex"
     },
     {
         name: "Dizzy", 
         link: "https://x.com/JuanXDC4D",
         skills: "Diseñador 3D, Compositor",
-        avatar: "juanxd"
+        avatar: "dizzy"
     },
     {
         name: "Fitz",
@@ -51,13 +51,13 @@ export const staff = [
         name: "Wachu Entity", 
         link: "https://wachustudio.myportfolio.com/",
         skills: "Productor Audiovisual",
-        avatar: "https://unavatar.io/x/WachuEntity"
+        avatar: "wachu"
     },
     {
         name: "YoTambre", 
         link: "https://x.com/yotambre",
         skills: "Productor Audiovisual",
-        avatar: "https://unavatar.io/x/yotambre"
+        avatar: "tambre"
     },
     {
         name: "Hister",
@@ -75,7 +75,7 @@ export const staff = [
         name: "CrawKatt",
         link: "https://crawkatt.dev/",
         skills: "Programador",
-        avatar: "https://unavatar.io/x/CrawKatt"
+        avatar: "craw"
     },
 ];
 

@@ -14,7 +14,7 @@ credits:
 - name: "Katto"
   link: "https://linktr.ee/katto1"
   skills: "Desarrollo Completo"
-  avatar: "https://unavatar.io/x/SoyKatto1"
+  avatar: "katto"
 - name: "Sir"
   link: "https://x.com/Sir4565"
   skills: "Moderación"
