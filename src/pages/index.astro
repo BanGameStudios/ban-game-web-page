@@ -9,7 +9,6 @@ import { videos, timeline, proyectos } from '../data/index';
 import Hero from '../components/Hero.astro';
 import Down from '../components/Icons/Down.astro';
 import { Image } from 'astro:assets';
-import Windows from '../components/Icons/Windows.astro';
 
 const projectPictures = await Promise.all(
   proyectos.map(async (proyecto) => {
@@ -88,7 +87,9 @@ const projectPictures = await Promise.all(
                             <li class="ms-4 mt-5">
                                 <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
                                 <time class="mb-1 text-sm font-normal leading-none text-gray-500">{item.date}</time>
-                                <h3 class="text-lg font-semibold text-white">{item.title}</h3>
+                                <h3 class="text-lg font-semibold text-white">
+                                    {item.link ? <a href={item.link} class="transition-colors duration-300 ease hover:text-[#ccc]">{item.title}</a> : item.title}
+                                </h3>
                                 <p class="text-base font-normal text-gray-400">{item.desc}</p>
                             </li>
                         ))

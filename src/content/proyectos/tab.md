@@ -1,9 +1,9 @@
 ---
-title: 👁 ...OMꙄIᙠA
+title: The Abyss Below
 type: Serie
 date: "2025"
 desc: Proximamente...
-banner: false
+banner: true
 order: 10
 
 gallery:

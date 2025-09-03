@@ -1,8 +1,27 @@
 export const timeline = [
     {
         date: "2025",
-        title: "???",
-        desc: "???."
+        title: "SONIC CHAMPIONS!",
+        desc: "???.",
+        link: "/proyectos/sonic/"
+    },
+    {
+        date: "2025",
+        title: "The Abyss Below",
+        desc: "???.",
+        link: "/proyectos/tab/"
+    },
+    {
+        date: "2025",
+        title: "— B.R.O.S.",
+        desc: "???.",
+        link: "/proyectos/ep/"
+    },
+    {
+        date: "Agosto 2025",
+        title: "TTT Re-Played",
+        desc: "Rejugación del evento inspirado en el modo de juego TTT (Trouble in Terrorist Town) de Garry's Mod.",
+        link: "/proyectos/ttt2/"
     },
     {
         date: "Agosto 2025",
@@ -10,34 +29,28 @@ export const timeline = [
         desc: "Aniversario de Ban Game Studios."
     },
     {
-        date: "2025",
-        title: "???",
-        desc: "???."
-    },
-    {
-        date: "2025",
-        title: "T-- A---- B----",
-        desc: "???."
-    },
-    {
         date: "Junio 2025",
         title: "Campo de Guerra",
-        desc: "Evento, en colaboración con SonPancho y Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower."
+        desc: "Evento, en colaboración con SonPancho y Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower.",
+        link: "/proyectos/cdg/"
     },
     {
         date: "Mayo 2025",
         title: "Flower Power",
-        desc: "Evento, en colaboración con Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower."
+        desc: "Evento, en colaboración con Crysis Studios, inspirado en la famosa modalidad conocida como UHC Item Flower.",
+        link: "/proyectos/fp/"
     },
     {
         date: "Abril 2025",
         title: "TTT",
-        desc: "Evento inspirado en el modo de juego TTT (Trouble in Terrorist Town) de Garry's Mod."
+        desc: "Evento inspirado en el modo de juego TTT (Trouble in Terrorist Town) de Garry's Mod.",
+        link: "/proyectos/ttt/"
     },
     {
         date: "Marzo 2025",
         title: "Un UHC Más 2",
-        desc: "Evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones."
+        desc: "Evento PvP inspirado en la famosa modalidad conocida como UHC pero con grandes adiciones.",
+        link: "/proyectos/uuhcm2/"
     }
 ]
 
@@ -65,6 +78,10 @@ export const videos = [
     {
         src: "p6dksY67fNs",
         title: "Campo de Guerra 🥀 | Evento colaboración con @CrysisStudio y @SonPanchoUwU"
+    },
+    {
+        src: "osygu3aYL4k",
+        title: "SONIC CHAMPIONS! | Próximo evento colaboración con The VYROX Project 🌻"
     }
 ]
 
@@ -76,10 +93,10 @@ export const proyectos = [
         date: "31 may 2025"
     },
     {
-        slug: "ttt",
-        title: "TTT",
+        slug: "ttt2",
+        title: "TTT Re-Played",
         type: "Evento",
-        date: "6 abr 2025"
+        date: "15 ago 2025"
     },
     {
         slug: "uuhcm2",
