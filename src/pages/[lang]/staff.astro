@@ -1,0 +1,126 @@
+---
+import StaffCard from '../../components/StaffCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import Banner from '../../components/Banner.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import MainPage from '../../components/MainPage.astro';
+import BriefCase from '../../components/Icons/BriefCase.astro';
+import MiniTitle from '../../components/MiniTitle.astro';
+
+const staff = [
+    {
+        name: "Katto", 
+        link: "https://linktr.ee/katto1",
+        skills: `${t("staff.skill.director")}, ${t("staff.skill.programmer")}`,
+        avatar: "https://web.bangame.tech/staff/katto.webp"
+    },
+    {
+        name: "Kozurat", 
+        link: "https://x.com/Kozurat",
+        skills: `${t("staff.skill.subDirector")}, ${t("staff.skill.designer2D3D")}`,
+        avatar: "https://web.bangame.tech/staff/kozu.webp"
+    },
+    {
+        name: "Salmon",
+        link: "https://linktr.ee/sannsalmon",
+        skills: `${t("staff.skill.auxDirector")}, ${t("staff.skill.compositor")}`,
+        avatar: "https://web.bangame.tech/staff/salmon.webp"
+    },
+    {
+        name: "Sir",
+        link: "https://x.com/Sir4565",
+        skills: `${t("staff.skill.builder")}`,
+        avatar: "https://web.bangame.tech/staff/sir.webp"
+    },
+    {
+        name: "Wasagen", 
+        link: "https://x.com/whoiswasa",
+        skills: `${t("staff.skill.scripwriter")}, ${t("staff.skill.helper")}`,
+        avatar: "https://web.bangame.tech/staff/wasa.webp"
+    },
+    {
+        name: "Alex VYROX",
+        link: "https://x.com/vHAleX211",
+        skills: `${t("staff.skill.helper")}`,
+        avatar: "https://web.bangame.tech/staff/alex.webp"
+    },
+    {
+        name: "Dizzy", 
+        link: "https://x.com/JuanXDC4D",
+        skills: `${t("staff.skill.designer3D")}, ${t("staff.skill.compositor")}`,
+        avatar: "https://web.bangame.tech/staff/dizzy.webp"
+    },
+    {
+        name: "Fitz",
+        link: "https://x.com/fitzxel",
+        skills: `${t("staff.skill.programmer")}`,
+        avatar: "https://web.bangame.tech/staff/fitz.webp"
+    },
+    {
+        name: "Wachu Entity", 
+        link: "https://wachustudio.myportfolio.com/",
+        skills: `${t("staff.skill.producerAudiovisual")}`,
+        avatar: "https://web.bangame.tech/staff/wachu.webp"
+    },
+    {
+        name: "YoTambre", 
+        link: "https://x.com/yotambre",
+        skills: `${t("staff.skill.producerAudiovisual")}`,
+        avatar: "https://web.bangame.tech/staff/tambre.webp"
+    },
+    {
+        name: "Hister",
+        link: "https://x.com/histerjax",
+        skills: `${t("staff.skill.programmer")}`,
+        avatar: "https://web.bangame.tech/staff/hister.webp"
+    },
+    {
+        name: "SrMaster",
+        link: "https://x.com/_SrMaster_",
+        skills: `${t("staff.skill.programmer")}`,
+        avatar: "https://web.bangame.tech/staff/srm.webp"
+    },
+    {
+        name: "CrawKatt",
+        link: "https://crawkatt.dev/",
+        skills: `${t("staff.skill.programmer")}`,
+        avatar: "https://web.bangame.tech/staff/craw.webp"
+    },
+];
+
+const tgb = [
+    {
+        name: "T.G.B",
+        skills: `${t("staff.tgb.skills")}`,
+        avatar: "https://web.bangame.tech/staff/tgb.webp"
+    },
+];
+
+export async function getStaticPaths() {
+  return ["es", "en"].map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+---
+
+<Layout title="Staff" image="/pages/staff.webp" desc={`${t("staff.desc")}`}>
+    <Banner src="banner3"/>
+    <MainPage>
+      <MiniTitle class="mb-5">{t("staff.miniTitle")}</MiniTitle>
+      <a class="flex flex-row items-center gap-2 px-5 py-3 bg-[#333] rounded-[20px] text-white transition-all duration-300 ease-in hover:bg-[#222222]" href="/postulate/">
+        <BriefCase class="w-8 h-8"/>
+        <span class="text-[1.6em]">{t("staff.apply")}</span>
+      </a>
+
+      <MiniTitle class="mt-10 mb-5">{t("staff.teamTitle")}</MiniTitle>
+      <StaffCard profiles={staff}/>
+
+      <MiniTitle class="mt-10 mb-5">{t("staff.tgbTitle")}</MiniTitle>
+      <StaffCard profiles={tgb}/>
+    </MainPage>
+</Layout>

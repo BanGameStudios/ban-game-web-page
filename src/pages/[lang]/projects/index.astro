@@ -1,0 +1,40 @@
+---
+import ProjectCard from '../../../components/ProjectCard.astro';
+import Layout from '../../../layouts/Layout.astro';
+import Title from '../../../components/Title.astro';
+import Banner from '../../../components/Banner.astro';
+import MainPage from '../../../components/MainPage.astro';
+import { getCollection, render } from "astro:content";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const info = await getCollection('info')
+const projects = info
+  .filter((item) => item.slug.startsWith(`${lang}/`))
+  .map((item) => ({ ...item, slug: item.slug.replace(`${lang}/`, "") }))
+  .find((item) => item.slug === "projects");
+
+const { Content } = await render(projects!)
+
+export async function getStaticPaths() {
+  return ["es", "en"].map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+---
+
+<Layout title={t("projects.title")} image="/pages/proyectos.webp" desc={t("projects.desc")}>
+    <Banner src="banner2"/>
+    <MainPage>
+        <Title class="mb-2">{t("projects.miniTitle")}</Title>
+        <div class="px-4 max-w-[900px] prose prose-invert text-left">
+            <Content/>
+        </div>
+        <div class="mt-6">
+            <ProjectCard/>
+        </div>
+    </MainPage>
+</Layout>

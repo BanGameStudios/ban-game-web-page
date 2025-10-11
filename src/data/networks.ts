@@ -7,6 +7,7 @@ import Mail from "../components/Icons/Mail.astro"
 import X from "../components/Icons/X.astro"
 
 export const networks = [
+
     {
         alt: 'X',
         href: 'https://x.com/BanGameStudios',
@@ -36,5 +37,10 @@ export const networks = [
         alt: "Mail",
         href: 'mailto:contacto@bangame.tech',
         icon: Mail
+    },
+    {
+        alt: 'Discord',
+        href: 'https://discord.gg/sKRYYyVCnw',
+        icon: Discord
     }
 ]

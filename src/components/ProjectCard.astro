@@ -1,19 +1,29 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-const proyectos = (await getCollection('proyectos')).sort((a: { data: { order: number; }; }, b: { data: { order: number; }; }) => {
-  const orderA = a.data.order ?? 0;
-  const orderB = b.data.order ?? 0;
-  return orderA - orderB;
-});
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const proyectos = (await getCollection('proyectos'))
+  .filter((p) => p.slug.startsWith(`${lang}/`))
+  .map((p) => ({
+    ...p,
+    slug: p.slug.replace(`${lang}/`, "")
+  }))
+  .sort((a, b) => {
+    const orderA = a.data.order ?? 0;
+    const orderB = b.data.order ?? 0;
+    return orderA - orderB;
+  });
 
 const projectPictures = await Promise.all(
-  proyectos.map(async (proyecto: { slug: any; data: any; }) => {
-      const  { slug } = proyecto
-      const image = await import(`../assets/projects/${slug}.webp`);
-      return { ...proyecto, avatar: image.default };
-    })
+  proyectos.map(async (proyecto) => {
+    const { slug } = proyecto;
+    const image = await import(`../assets/projects/${slug}.webp`);
+    return { ...proyecto, avatar: image.default };
+  })
 );
 ---
 
@@ -34,7 +44,7 @@ const projectPictures = await Promise.all(
         // </article>
 
         <article class="flex flex-col gap-3 justify-center text-left bg-[#111] text-white w-[300px] border-[1.5px] border-[rgba(42,42,42,0.500)] overflow-hidden relative z-[0] group">
-          <a href={`/proyectos/${slug}`}>
+          <a href={`/${lang}/projects/${slug}`}>
             <Image src={avatar} alt={title} quality="high" class="w-full h-full" transition:name={slug} />
           </a>
           <Image src={avatar} alt={title} quality="high" class="absolute w-full h-full object-cover opacity-[0.10] blur-[2rem] z-[-2] transition-opacity duration-1000 group-hover:opacity-[0.20]" />

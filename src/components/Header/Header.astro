@@ -1,6 +1,23 @@
 ---
 import Download from "../Icons/Download.astro";
 import NavButtons from "./NavButtons.astro";
+import { getLangFromUrl } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+
+function switchLangUrl() {
+  const segments = Astro.url.pathname.split("/").filter(Boolean);
+
+  if (segments.length > 0) {
+    segments[0] = lang === "es" ? "en" : "es";
+  }
+
+  return "/" + segments.join("/") + "/";
+}
+
+const targetLang = lang === "es" ? "en" : "es";
+const targetLabel = lang === "es" ? "English" : "Español";
 ---
 
 <div class="mb-[55px]">
@@ -18,12 +35,18 @@ import NavButtons from "./NavButtons.astro";
                 </ul>
             </nav>
     
-            <a class="text-[1.5em] font-bold text-center justify-center absolute transition-colors duration-300 ease top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-[720px]:hidden hover:text-[#ccc]" href="/">BAN GAME STUDIOS</a>
+            <a class="text-[1.5em] font-bold text-center justify-center absolute transition-colors duration-300 ease top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-[960px]:hidden hover:text-[#ccc]" href=`/${lang}/`>BAN GAME STUDIOS</a>
         
-            <a href="/launcher" class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222]">
-                <Download class="w-5 h-5"/>
-                Ban Game Launcher
-            </a>
+            <div class="flex flex-row gap-2.5">
+                <a href={switchLangUrl()} class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222]">
+                    {targetLabel}
+                  </a>
+
+                <a href=`/${lang}/launcher/` class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222]">
+                    <Download class="w-5 h-5"/>
+                    Ban Game Launcher
+                </a>
+            </div>
         </div>
     </header>
 </div>

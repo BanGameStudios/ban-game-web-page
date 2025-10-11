@@ -1,7 +1,4 @@
 ---
-import Desc from "../components/Desc.astro";
-import MainPage from "../components/MainPage.astro";
-import Title from "../components/Title.astro";
 import { redirects } from "../data/redirects";
 import Layout from "../layouts/Layout.astro";
 
@@ -13,12 +10,9 @@ export async function getStaticPaths() {
 }
 
 const { redirect } = Astro.props
-const { id, url, title, desc } = redirect
+const { url, title, desc } = redirect
+
+return Astro.redirect(url);
 ---
 
-<Layout title={title} desc={desc} redirect={url}>
-    <MainPage class="h-[calc(100vh-125px)]">
-        <Title>Redirigiendo...</Title>
-        <Desc class="mt-2.5">Redirigiendo, por favor espere...</Desc>
-    </MainPage>
-</Layout>
+<Layout title={title} desc={desc} />
