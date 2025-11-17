@@ -10,9 +10,7 @@ export async function getStaticPaths() {
 }
 
 const { redirect } = Astro.props
-const { url, title, desc } = redirect
-
-return Astro.redirect(url);
+const { title, desc } = redirect
 ---
 
 <Layout title={title} desc={desc} />
