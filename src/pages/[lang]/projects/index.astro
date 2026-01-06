@@ -10,6 +10,10 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+if (!["es", "en"].includes(Astro.url.pathname.split("/")[1])) {
+  return new Response(null, { status: 404 });
+}
+
 const info = await getCollection('info')
 const projects = info
   .filter((item) => item.slug.startsWith(`${lang}/`))
@@ -17,13 +21,6 @@ const projects = info
   .find((item) => item.slug === "projects");
 
 const { Content } = await render(projects!)
-
-export async function getStaticPaths() {
-  return ["es", "en"].map((lang) => ({
-    params: { lang },
-    props: { lang },
-  }));
-}
 ---
 
 <Layout title={t("projects.title")} image="/pages/proyectos.webp" desc={t("projects.desc")}>

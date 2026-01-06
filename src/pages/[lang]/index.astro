@@ -9,18 +9,16 @@ import Hero from '../../components/Hero.astro';
 import Down from '../../components/Icons/Down.astro';
 import { Image } from 'astro:assets';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { uploadAllProjects } from '../../libs/firestore/content';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { videos, timeline, proyectos } = await import(`../../data/${lang}/index.ts`);
-
-export async function getStaticPaths() {
-  return ["es", "en"].map((lang) => ({
-    params: { lang },
-    props: { lang },
-  }));
+if (!["es", "en"].includes(Astro.url.pathname.split("/")[1])) {
+  return new Response(null, { status: 404 });
 }
+
+const { videos, timeline, proyectos } = await import(`../../data/${lang}/index.ts`);
 
 const projectPictures = await Promise.all(
   proyectos.map(async (proyecto: { slug: any; }) => {
@@ -29,6 +27,8 @@ const projectPictures = await Promise.all(
       return { ...proyecto, avatar: image.default };
     })
 );
+
+// await uploadAllProjects();
 ---
 
 <Layout title="Ban Game Studios" image="/pages/index.webp" desc={`${t('index.desc')}`}>

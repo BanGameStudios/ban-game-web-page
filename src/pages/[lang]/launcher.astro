@@ -11,11 +11,8 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-export async function getStaticPaths() {
-  return ["es", "en"].map((lang) => ({
-    params: { lang },
-    props: { lang },
-  }));
+if (!["es", "en"].includes(Astro.url.pathname.split("/")[1])) {
+  return new Response(null, { status: 404 });
 }
 ---
 

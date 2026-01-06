@@ -1,7 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import Title from '../../../components/Title.astro';
-import { getCollection, render } from 'astro:content';
 import YTVideo from '../../../components/YTVideo.astro';
 import { Image } from 'astro:assets';
 import MiniTitle from '../../../components/MiniTitle.astro';
@@ -12,54 +11,49 @@ import Banner from '../../../components/Banner.astro';
 import StaffCard from '../../../components/StaffCard.astro';
 import Desc from '../../../components/Desc.astro';
 import TweetEmbed from '../../../components/TweetEmbed.astro';
-import { useTranslations } from "../../../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import { getProjectBySlug } from "../../../libs/firestore/projects";
 
-export async function getStaticPaths() {
-    const proyectos = await getCollection('proyectos');
+export const prerender = false;
 
-    return proyectos.map((p) => {
-        const [lang, ...rest] = p.slug.split("/");
-        const cleanSlug = rest.join("/");
+const { id } = Astro.params;
 
-        return {
-            params: { lang, id: cleanSlug },
-            props: { proyecto: { ...p, slug: cleanSlug, lang } }
-        };
-    });
+if (!["es", "en"].includes(Astro.url.pathname.split("/")[1])) {
+  return new Response(null, { status: 404 });
 }
 
-const { proyecto } = Astro.props;
-import type { CollectionEntry } from 'astro:content';
+const proyecto = await getProjectBySlug(id, Astro.url.pathname.split("/")[1]);
 
-const { slug, data, lang } = proyecto as CollectionEntry<'proyectos'>;
+if (!proyecto) {
+  return new Response(null, { status: 404 });
+}
 
-const t = useTranslations(lang as "es" | "en");
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
-const { title, type, date, desc, banner } = data;
+const { default: image } = await import(`../../../assets/projects/${proyecto.slug}.webp`);
 
-const { Content } = await render(proyecto);
-
-const { default: image } = await import(`../../../assets/projects/${slug}.webp`);
-
-const gallery = data.gallery || [];
+const gallery = proyecto.gallery || [];
 const videos = gallery ? gallery.filter((item: { type: string }) => item.type === "video") : [];
 const images = gallery ? gallery.filter((item: { type: string }) => item.type === "image") : [];
-const tweets = data.tweets || [];
-const credits = data.credits || [];
+
+const tweets = proyecto.tweets || [];
+
+const credits = proyecto.credits || [];
 ---
 
-<Layout title={title} desc={desc}>
-    {banner && <Banner src={slug}/>}
+<Layout title={proyecto.title} desc={proyecto.desc}>
+    {proyecto.banner && <Banner src={proyecto.slug}/>}
     <MainPage>
-        {!banner && <section class="flex flex-col justify-center items-center">
-            <Image src={image} alt={title} quality="high" class="absolute mt-[22px] w-[260px] h-[260px] object-cover opacity-[0.25] justify-center z-[-10] blur-[1rem]"/>
-            <Image src={image} alt={title} quality="high" class="w-[250px] h-[250px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out flex justify-center mt-[25px] group" transition:name={slug}/>
+        {!proyecto.banner && <section class="flex flex-col justify-center items-center">
+            <Image src={image} alt={proyecto.title} quality="high" class="absolute mt-[22px] w-[260px] h-[260px] object-cover opacity-[0.25] justify-center z-[-10] blur-[1rem]"/>
+            <Image src={image} alt={proyecto.title} quality="high" class="w-[250px] h-[250px] rounded-[10px] object-cover transition-transform duration-300 ease-in-out flex justify-center mt-[25px] group" transition:name={proyecto.slug}/>
         </section>}
 
-        <Title class="mt-5">{title}</Title>
-        <Desc class="mt-2.5">{type} - {date}</Desc>
+        <Title class="mt-5">{proyecto.title}</Title>
+        <Desc class="mt-2.5">{proyecto.type} - {proyecto.date}</Desc>
         <div class="px-4 mt-5 max-w-[900px] prose prose-invert">
-            <Content/>
+            {proyecto.content}
         </div>
 
         {gallery.length > 0 && (

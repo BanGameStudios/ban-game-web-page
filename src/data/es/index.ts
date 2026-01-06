@@ -1,18 +1,18 @@
 export const timeline = [
     {
-        date: "2025",
+        date: "2026",
         title: "SONIC CHAMPIONS!",
         desc: "???.",
         link: "/es/projects/sonic/"
     },
     {
-        date: "2025",
+        date: "2026",
         title: "The Abyss Below",
         desc: "???.",
         link: "/es/projects/tab/"
     },
     {
-        date: "2025",
+        date: "2026",
         title: "— B.R.O.S.",
         desc: "???.",
         link: "/es/projects/ep/"

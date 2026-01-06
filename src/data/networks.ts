@@ -7,7 +7,6 @@ import Mail from "../components/Icons/Mail.astro"
 import X from "../components/Icons/X.astro"
 
 export const networks = [
-
     {
         alt: 'X',
         href: 'https://x.com/BanGameStudios',

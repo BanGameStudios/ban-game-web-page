@@ -1,10 +1,11 @@
 ---
 import Download from "../Icons/Download.astro";
 import NavButtons from "./NavButtons.astro";
-import { getLangFromUrl } from "../../i18n/utils";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/astro/components";
 
 const lang = getLangFromUrl(Astro.url);
-
+const t = useTranslations(lang);
 
 function switchLangUrl() {
   const segments = Astro.url.pathname.split("/").filter(Boolean);
@@ -18,6 +19,7 @@ function switchLangUrl() {
 
 const targetLang = lang === "es" ? "en" : "es";
 const targetLabel = lang === "es" ? "English" : "Español";
+const targetLabelFlag = lang === "es" ? "🇬🇧" : "🇪🇸";
 ---
 
 <div class="mb-[55px]">
@@ -38,14 +40,29 @@ const targetLabel = lang === "es" ? "English" : "Español";
             <a class="text-[1.5em] font-bold text-center justify-center absolute transition-colors duration-300 ease top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-[960px]:hidden hover:text-[#ccc]" href=`/${lang}/`>BAN GAME STUDIOS</a>
         
             <div class="flex flex-row gap-2.5">
-                <a href={switchLangUrl()} class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222]">
+                <a href={switchLangUrl()} class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222] max-[420px]:hidden">
                     {targetLabel}
-                  </a>
+                </a>
+
+                <a href={switchLangUrl()} class="hidden flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222] max-[420px]:flex">
+                    {targetLabelFlag}
+                </a>
 
                 <a href=`/${lang}/launcher/` class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222]">
                     <Download class="w-5 h-5"/>
                     Ban Game Launcher
                 </a>
+
+                <div class="flex max-[420px]:hidden">
+                    <SignedOut>
+                        <SignInButton mode="modal" class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222] cursor-pointer">
+                            Iniciar Sesión
+                        </SignInButton> 
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton/>
+                    </SignedIn>
+                </div>
             </div>
         </div>
     </header>
@@ -54,6 +71,17 @@ const targetLabel = lang === "es" ? "English" : "Español";
 <div class="menu fixed top-[50px] left-0 w-full h-full bg-[#000000e6] p-5 z-[999]" id="menu">
     <ul class="flex flex-col gap-5">
         <NavButtons/>
+        
+        <li class="hidden max-[420px]:flex">
+            <SignedOut>
+                <SignInButton mode="modal" class="flex flex-row items-center gap-1.5 px-3.5 p-1 bg-[#333] rounded-[15px] transition-all duration-300 ease hover:bg-[#222222] cursor-pointer w-max">
+                    Iniciar Sesión
+                </SignInButton> 
+            </SignedOut>
+            <SignedIn>
+                <UserButton/>
+            </SignedIn>
+        </li>
     </ul>
 </div>
 
