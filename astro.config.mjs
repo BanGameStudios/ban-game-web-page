@@ -15,6 +15,16 @@ const redirectMap = Object.fromEntries(
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "web.bangame.tech",
+        pathname: "/**",
+      },
+    ],
+  },
+
   vite: {
     plugins: [tailwindcss()]
   },
