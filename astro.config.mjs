@@ -7,6 +7,8 @@ import clerk from '@clerk/astro'
 import { dark } from "@clerk/themes";
 import { esES } from "@clerk/localizations";
 
+import netlify from '@astrojs/netlify';
+
 const redirectMap = Object.fromEntries(
   redirects.map(({ id, url }) => [`/${id}`, url])
 );
@@ -29,8 +31,6 @@ export default defineConfig({
       localization: esES,
   })],
 
-  adapter: node({
-    mode: 'standalone'
-  }),
+  adapter: netlify(),
   output: 'server'
 });
